@@ -1,0 +1,38 @@
+version: 2
+
+sources:
+  - name: chicago_taxi_source
+    meta:
+      external_location: "read_parquet('/home/mona/PycharmProjects/PythonProject/data/taxi_data_silver/*.parquet')"
+    tables:
+      - name: taxi_data_silver
+
+models:
+  - name: dim_location
+    description: "Location dimension table"
+    columns:
+      - name: location_key
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_trips
+    description: "Trips dimension table"
+    columns:
+      - name: trip_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: fact_trips
+    description: "Taxi trips fact table"
+    columns:
+      - name: trip_id
+        data_tests:
+          - unique
+          - not_null
+      - name: location_key
+        data_tests:
+          - relationships:
+              to: ref('dim_location')
+              field: location_key

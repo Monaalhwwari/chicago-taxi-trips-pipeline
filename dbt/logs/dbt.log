@@ -1,0 +1,2015 @@
+[0m21:49:14.148340 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77a9b1e3e270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77a9b187a990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77a9b185f1d0>]}
+
+
+============================== 21:49:14.150998 | cb360064-63ee-4d1c-a672-99a6fd699dec ==============================
+[0m21:49:14.150998 [info ] [MainThread]: Running with dbt=1.12.4
+[0m21:49:14.151567 [debug] [MainThread]: running dbt with arguments {'indirect_selection': 'eager', 'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'maximum_seed_size_mib': '1', 'profiles_dir': '/home/mona/.dbt', 'no_print': 'None', 'log_cache_events': 'False', 'hints_enabled': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'partial_parse': 'True', 'empty': 'None', 'quiet': 'False', 'version_check': 'True', 'fail_fast': 'False', 'log_format': 'default', 'use_colors': 'True', 'debug': 'False', 'warn_error': 'None', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'printer_width': '80', 'log_path': '/home/mona/PycharmProjects/PythonProject/dbt/logs'}
+[0m21:49:14.163159 [info ] [MainThread]: dbt version: 1.12.4
+[0m21:49:14.163622 [info ] [MainThread]: python version: 3.12.3
+[0m21:49:14.164085 [info ] [MainThread]: python path: /home/mona/PycharmProjects/PythonProject/.venv/bin/python
+[0m21:49:14.164670 [info ] [MainThread]: os info: Linux-7.0.0-31-generic-x86_64-with-glibc2.39
+[0m21:49:14.374454 [info ] [MainThread]: Using profiles dir at /home/mona/.dbt
+[0m21:49:14.374918 [info ] [MainThread]: Using profiles.yml file at /home/mona/.dbt/profiles.yml
+[0m21:49:14.375285 [info ] [MainThread]: Using dbt_project.yml file at /home/mona/PycharmProjects/PythonProject/dbt/dbt_project.yml
+[0m21:49:14.377203 [info ] [MainThread]: adapter type: duckdb
+[0m21:49:14.377589 [info ] [MainThread]: adapter version: 1.11.0
+[0m21:49:14.501051 [info ] [MainThread]: Configuration:
+[0m21:49:14.501524 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m21:49:14.501889 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m21:49:14.502274 [info ] [MainThread]: Required dependencies:
+[0m21:49:14.502671 [debug] [MainThread]: Executing "git --help"
+[0m21:49:14.511411 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m21:49:14.512144 [debug] [MainThread]: STDERR: "b''"
+[0m21:49:14.512781 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m21:49:14.513159 [info ] [MainThread]: Connection:
+[0m21:49:14.513548 [info ] [MainThread]:   database: chicago_taxi
+[0m21:49:14.513939 [info ] [MainThread]:   schema: gold
+[0m21:49:14.514405 [info ] [MainThread]:   path: data/chicago_taxi.duckdb
+[0m21:49:14.514830 [info ] [MainThread]:   config_options: None
+[0m21:49:14.515242 [info ] [MainThread]:   extensions: None
+[0m21:49:14.515746 [info ] [MainThread]:   settings: {}
+[0m21:49:14.516402 [info ] [MainThread]:   external_root: .
+[0m21:49:14.517068 [info ] [MainThread]:   use_credential_provider: None
+[0m21:49:14.517865 [info ] [MainThread]:   attach: None
+[0m21:49:14.518329 [info ] [MainThread]:   filesystems: None
+[0m21:49:14.518746 [info ] [MainThread]:   remote: None
+[0m21:49:14.519125 [info ] [MainThread]:   plugins: None
+[0m21:49:14.519509 [info ] [MainThread]:   disable_transactions: False
+[0m21:49:14.520031 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m21:49:14.602260 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
+[0m21:49:14.633501 [debug] [MainThread]: Using duckdb connection "debug"
+[0m21:49:14.633934 [debug] [MainThread]: On debug: select 1 as id
+[0m21:49:14.634301 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m21:49:14.649235 [debug] [MainThread]: DuckDB adapter: duckdb error: IO Error: Cannot open file "/home/mona/PycharmProjects/PythonProject/dbt/data/chicago_taxi.duckdb": No such file or directory
+[0m21:49:14.649692 [debug] [MainThread]: DuckDB adapter: Error running SQL: select 1 as id
+[0m21:49:14.650048 [debug] [MainThread]: DuckDB adapter: Rolling back transaction.
+[0m21:49:14.650410 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m21:49:14.654994 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m21:49:14.655419 [info ] [MainThread]: [31m1 check failed:[0m
+[0m21:49:14.655814 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >IO Error: Cannot open file "/home/mona/PycharmProjects/PythonProject/dbt/data/chicago_taxi.duckdb": No such file or directory
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m21:49:14.656699 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.67675793, "process_in_blocks": "68304", "process_kernel_time": 0.170545, "process_mem_max_rss": "151752", "process_out_blocks": "16", "process_user_time": 1.89105}
+[0m21:49:14.657235 [debug] [MainThread]: Command `dbt debug` failed at 21:49:14.657124 after 0.68 seconds
+[0m21:49:14.657614 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m21:49:14.658072 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77a9b1c91a00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77a9a8a94860>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77a9a8d66a20>]}
+[0m21:49:14.658519 [debug] [MainThread]: Flushing usage events
+[0m21:49:17.240495 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:50:22.629604 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764dc4438860>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764dc12fffb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764dc12fff20>]}
+
+
+============================== 21:50:22.632260 | 186b05de-c79c-486a-a670-fc195c7d671a ==============================
+[0m21:50:22.632260 [info ] [MainThread]: Running with dbt=1.12.4
+[0m21:50:22.632880 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt debug', 'profiles_dir': '/home/mona/.dbt', 'hints_enabled': 'True', 'indirect_selection': 'eager', 'log_path': '/home/mona/PycharmProjects/PythonProject/dbt/logs', 'target_path': 'None', 'warn_error': 'None', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'no_print': 'None', 'empty': 'None', 'log_cache_events': 'False', 'static_parser': 'True', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'quiet': 'False', 'fail_fast': 'False', 'maximum_seed_size_mib': '1', 'write_json': 'True', 'introspect': 'True', 'log_format': 'default', 'printer_width': '80', 'send_anonymous_usage_stats': 'True'}
+[0m21:50:22.643900 [info ] [MainThread]: dbt version: 1.12.4
+[0m21:50:22.644355 [info ] [MainThread]: python version: 3.12.3
+[0m21:50:22.644727 [info ] [MainThread]: python path: /home/mona/PycharmProjects/PythonProject/.venv/bin/python
+[0m21:50:22.645098 [info ] [MainThread]: os info: Linux-7.0.0-31-generic-x86_64-with-glibc2.39
+[0m21:50:22.760868 [info ] [MainThread]: Using profiles dir at /home/mona/.dbt
+[0m21:50:22.761340 [info ] [MainThread]: Using profiles.yml file at /home/mona/.dbt/profiles.yml
+[0m21:50:22.761702 [info ] [MainThread]: Using dbt_project.yml file at /home/mona/PycharmProjects/PythonProject/dbt/dbt_project.yml
+[0m21:50:22.763165 [info ] [MainThread]: adapter type: duckdb
+[0m21:50:22.763614 [info ] [MainThread]: adapter version: 1.11.0
+[0m21:50:22.888201 [info ] [MainThread]: Configuration:
+[0m21:50:22.888657 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m21:50:22.889023 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m21:50:22.889386 [info ] [MainThread]: Required dependencies:
+[0m21:50:22.889760 [debug] [MainThread]: Executing "git --help"
+[0m21:50:22.891256 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m21:50:22.891679 [debug] [MainThread]: STDERR: "b''"
+[0m21:50:22.892016 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m21:50:22.892377 [info ] [MainThread]: Connection:
+[0m21:50:22.892739 [info ] [MainThread]:   database: chicago_taxi
+[0m21:50:22.893087 [info ] [MainThread]:   schema: gold
+[0m21:50:22.893453 [info ] [MainThread]:   path: /home/mona/PycharmProjects/PythonProject/data/chicago_taxi.duckdb
+[0m21:50:22.893800 [info ] [MainThread]:   config_options: None
+[0m21:50:22.894145 [info ] [MainThread]:   extensions: None
+[0m21:50:22.894508 [info ] [MainThread]:   settings: {}
+[0m21:50:22.894854 [info ] [MainThread]:   external_root: .
+[0m21:50:22.895199 [info ] [MainThread]:   use_credential_provider: None
+[0m21:50:22.895552 [info ] [MainThread]:   attach: None
+[0m21:50:22.895893 [info ] [MainThread]:   filesystems: None
+[0m21:50:22.896245 [info ] [MainThread]:   remote: None
+[0m21:50:22.896594 [info ] [MainThread]:   plugins: None
+[0m21:50:22.896943 [info ] [MainThread]:   disable_transactions: False
+[0m21:50:22.897501 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m21:50:22.973567 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
+[0m21:50:22.996048 [debug] [MainThread]: Using duckdb connection "debug"
+[0m21:50:22.996470 [debug] [MainThread]: On debug: select 1 as id
+[0m21:50:22.996810 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m21:50:23.075692 [debug] [MainThread]: SQL status: OK in 0.079 seconds
+[0m21:50:23.078459 [debug] [MainThread]: On debug: Close
+[0m21:50:23.079667 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m21:50:23.080620 [info ] [MainThread]: [32mAll checks passed![0m
+[0m21:50:23.082395 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 0.53592813, "process_in_blocks": "896", "process_kernel_time": 0.149604, "process_mem_max_rss": "153652", "process_out_blocks": "40", "process_user_time": 1.870057}
+[0m21:50:23.083513 [debug] [MainThread]: Command `dbt debug` succeeded at 21:50:23.083291 after 0.54 seconds
+[0m21:50:23.084312 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m21:50:23.085148 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764dc1377ad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764dbfe02240>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764dc0f42150>]}
+[0m21:50:23.085893 [debug] [MainThread]: Flushing usage events
+[0m21:50:24.754249 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:50:33.190373 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c72d0420500>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c72d13a3d10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c72d32b4170>]}
+
+
+============================== 21:50:33.193004 | 8d7d0a78-0775-41c8-ad54-b587fce467da ==============================
+[0m21:50:33.193004 [info ] [MainThread]: Running with dbt=1.12.4
+[0m21:50:33.193554 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'quiet': 'False', 'profiles_dir': '/home/mona/.dbt', 'debug': 'False', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'target_path': 'None', 'warn_error': 'None', 'empty': 'False', 'invocation_command': 'dbt run', 'use_experimental_parser': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'write_json': 'True', 'maximum_seed_size_mib': '1', 'hints_enabled': 'True', 'introspect': 'True', 'partial_parse': 'True', 'log_path': '/home/mona/PycharmProjects/PythonProject/dbt/logs', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'static_parser': 'True', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'printer_width': '80'}
+[0m21:50:33.508999 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8d7d0a78-0775-41c8-ad54-b587fce467da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c72c81996a0>]}
+[0m21:50:33.581929 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '8d7d0a78-0775-41c8-ad54-b587fce467da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c72cff87da0>]}
+[0m21:50:33.583716 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m21:50:33.667245 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Compilation Error
+  dbt expects 1 package(s) based on packages specified in packages.yml, but found only 0 package(s) installed in dbt_packages. Run "dbt deps" to install package dependencies.
+[0m21:50:33.668159 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.5598361, "process_in_blocks": "552", "process_kernel_time": 0.138917, "process_mem_max_rss": "147640", "process_out_blocks": "8", "process_user_time": 1.902873}
+[0m21:50:33.668702 [debug] [MainThread]: Command `dbt run` failed at 21:50:33.668598 after 0.56 seconds
+[0m21:50:33.669115 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c72d06f2840>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c72c808f470>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c72c808d370>]}
+[0m21:50:33.669539 [debug] [MainThread]: Flushing usage events
+[0m21:50:35.598893 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:50:59.948460 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76bbea783c20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76bbeb11e0f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76bbea33a540>]}
+
+
+============================== 21:50:59.950660 | 7cd7d520-1952-436a-bd52-cb509227ad48 ==============================
+[0m21:50:59.950660 [info ] [MainThread]: Running with dbt=1.12.4
+[0m21:50:59.951209 [debug] [MainThread]: running dbt with arguments {'fail_fast': 'False', 'profiles_dir': '/home/mona/.dbt', 'no_print': 'None', 'debug': 'False', 'hints_enabled': 'True', 'target_path': 'None', 'log_path': '/home/mona/PycharmProjects/PythonProject/dbt/logs', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'introspect': 'True', 'version_check': 'True', 'empty': 'None', 'log_format': 'default', 'partial_parse': 'True', 'printer_width': '80', 'send_anonymous_usage_stats': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'static_parser': 'True', 'warn_error': 'None', 'indirect_selection': 'eager', 'invocation_command': 'dbt deps', 'write_json': 'True', 'maximum_seed_size_mib': '1', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'quiet': 'False'}
+[0m21:51:00.063715 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '7cd7d520-1952-436a-bd52-cb509227ad48', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76bbea82d160>]}
+[0m21:51:00.087065 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-n4891545'
+[0m21:51:00.087607 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m21:51:00.950825 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m21:51:00.955087 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m21:51:01.093909 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m21:51:01.108383 [info ] [MainThread]: Updating lock file in file path: /home/mona/PycharmProjects/PythonProject/dbt/package-lock.yml
+[0m21:51:01.110632 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-n51bkdqw'
+[0m21:51:01.114980 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m21:51:03.356130 [info ] [MainThread]: Installed from version 1.1.1
+[0m21:51:03.356579 [info ] [MainThread]: Updated version available: 1.4.1
+[0m21:51:03.357005 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '7cd7d520-1952-436a-bd52-cb509227ad48', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76bbea2e08c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76bbea7fbb60>]}
+[0m21:51:03.357439 [info ] [MainThread]: 
+[0m21:51:03.357826 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m21:51:03.358885 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 3.4830556, "process_in_blocks": "232", "process_kernel_time": 0.122558, "process_mem_max_rss": "117136", "process_out_blocks": "2240", "process_user_time": 1.788555}
+[0m21:51:03.359677 [debug] [MainThread]: Command `dbt deps` succeeded at 21:51:03.359531 after 3.48 seconds
+[0m21:51:03.360279 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76bbea33a540>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76bbe9385ca0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76bbea7fbb60>]}
+[0m21:51:03.360895 [debug] [MainThread]: Flushing usage events
+[0m21:51:06.042361 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:51:14.343566 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70bfdece5460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70bfdf3ef7a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70bfe31f58b0>]}
+
+
+============================== 21:51:14.346412 | 883afa7b-620d-4620-9909-8ea0c40c4dc5 ==============================
+[0m21:51:14.346412 [info ] [MainThread]: Running with dbt=1.12.4
+[0m21:51:14.346987 [debug] [MainThread]: running dbt with arguments {'log_path': '/home/mona/PycharmProjects/PythonProject/dbt/logs', 'partial_parse': 'True', 'target_path': 'None', 'introspect': 'True', 'indirect_selection': 'eager', 'printer_width': '80', 'warn_error': 'None', 'use_colors': 'True', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True', 'use_experimental_parser': 'False', 'log_format': 'default', 'empty': 'False', 'profiles_dir': '/home/mona/.dbt', 'write_json': 'True', 'version_check': 'True', 'quiet': 'False', 'log_cache_events': 'False', 'static_parser': 'True', 'debug': 'False', 'no_print': 'None', 'fail_fast': 'False', 'hints_enabled': 'True', 'invocation_command': 'dbt run', 'maximum_seed_size_mib': '1'}
+[0m21:51:14.591860 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '883afa7b-620d-4620-9909-8ea0c40c4dc5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70bfe1cf1850>]}
+[0m21:51:14.659473 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '883afa7b-620d-4620-9909-8ea0c40c4dc5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70bfd6d5a1b0>]}
+[0m21:51:14.660942 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m21:51:14.743743 [debug] [MainThread]: checksum: 4b125ace8e4d4b1c5105e1f82b9265449ec04590296dd1ff86d37b8bfa277925, vars: {}, profile: chicago_taxi_dbt, target: dev, version: 1.12.4
+[0m21:51:14.744305 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m21:51:14.744686 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '883afa7b-620d-4620-9909-8ea0c40c4dc5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70bfde9eaf90>]}
+[0m21:51:15.817585 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.chicago_taxi_dbt
+[0m21:51:15.820899 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '883afa7b-620d-4620-9909-8ea0c40c4dc5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70bfdeaded50>]}
+[0m21:51:15.870871 [debug] [MainThread]: Wrote artifact WritableManifest to /home/mona/PycharmProjects/PythonProject/dbt/target/manifest.json
+[0m21:51:15.872959 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/mona/PycharmProjects/PythonProject/dbt/target/semantic_manifest.json
+[0m21:51:15.889320 [debug] [MainThread]: Wrote artifact OsiDocument to /home/mona/PycharmProjects/PythonProject/dbt/target/osi_document.json
+[0m21:51:15.895669 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '883afa7b-620d-4620-9909-8ea0c40c4dc5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70bfd6abc620>]}
+[0m21:51:15.896084 [info ] [MainThread]: Found 614 macros
+[0m21:51:15.896432 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '883afa7b-620d-4620-9909-8ea0c40c4dc5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70bfd6aa21b0>]}
+[0m21:51:15.897669 [warn ] [MainThread]: [[33mWARNING[0m]: Nothing to do. Try checking your model configs and model specification args
+[0m21:51:15.898196 [debug] [MainThread]: Command end result
+[0m21:51:15.932131 [debug] [MainThread]: Wrote artifact WritableManifest to /home/mona/PycharmProjects/PythonProject/dbt/target/manifest.json
+[0m21:51:15.934561 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/mona/PycharmProjects/PythonProject/dbt/target/semantic_manifest.json
+[0m21:51:15.936879 [debug] [MainThread]: Wrote artifact OsiDocument to /home/mona/PycharmProjects/PythonProject/dbt/target/osi_document.json
+[0m21:51:15.939992 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/mona/PycharmProjects/PythonProject/dbt/target/run_results.json
+[0m21:51:15.940829 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.6821408, "process_in_blocks": "2056", "process_kernel_time": 0.152059, "process_mem_max_rss": "152348", "process_out_blocks": "4400", "process_user_time": 3.054197}
+[0m21:51:15.941345 [debug] [MainThread]: Command `dbt run` succeeded at 21:51:15.941244 after 1.68 seconds
+[0m21:51:15.941752 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70bfdfef8bf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70bfd6ae1670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70bfdeadf080>]}
+[0m21:51:15.942164 [debug] [MainThread]: Flushing usage events
+[0m21:51:17.409676 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:59:16.609515 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a508d74c3e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a508ab909b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a508b2042c0>]}
+
+
+============================== 21:59:16.612164 | 60090a3d-e374-4181-aa1c-1fb45e48c0c2 ==============================
+[0m21:59:16.612164 [info ] [MainThread]: Running with dbt=1.12.4
+[0m21:59:16.612828 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'hints_enabled': 'True', 'empty': 'False', 'no_print': 'None', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'static_parser': 'True', 'log_format': 'default', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'printer_width': '80', 'log_path': '/home/mona/PycharmProjects/PythonProject/dbt/logs', 'log_cache_events': 'False', 'use_colors': 'True', 'version_check': 'True', 'partial_parse': 'True', 'fail_fast': 'False', 'quiet': 'False', 'cache_selected_only': 'False', 'invocation_command': 'dbt run', 'target_path': 'None', 'profiles_dir': '/home/mona/.dbt', 'maximum_seed_size_mib': '1', 'warn_error': 'None', 'debug': 'False'}
+[0m21:59:16.854077 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '60090a3d-e374-4181-aa1c-1fb45e48c0c2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a508a69aa50>]}
+[0m21:59:16.926808 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '60090a3d-e374-4181-aa1c-1fb45e48c0c2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a5082551820>]}
+[0m21:59:16.928567 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m21:59:17.016154 [debug] [MainThread]: checksum: 4b125ace8e4d4b1c5105e1f82b9265449ec04590296dd1ff86d37b8bfa277925, vars: {}, profile: chicago_taxi_dbt, target: dev, version: 1.12.4
+[0m21:59:17.068509 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m21:59:17.069032 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '60090a3d-e374-4181-aa1c-1fb45e48c0c2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a508b24e0f0>]}
+[0m21:59:18.681007 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `relationships` defined on 'fact_trips' in
+package 'chicago_taxi_dbt' (models/schema.yml). Arguments to generic tests
+should be nested under the `arguments` property.
+[0m21:59:18.681478 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '60090a3d-e374-4181-aa1c-1fb45e48c0c2', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a508110f950>]}
+[0m21:59:18.892444 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '60090a3d-e374-4181-aa1c-1fb45e48c0c2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a5073e48c80>]}
+[0m21:59:18.993484 [debug] [MainThread]: Wrote artifact WritableManifest to /home/mona/PycharmProjects/PythonProject/dbt/target/manifest.json
+[0m21:59:18.995799 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/mona/PycharmProjects/PythonProject/dbt/target/semantic_manifest.json
+[0m21:59:19.006682 [debug] [MainThread]: Wrote artifact OsiDocument to /home/mona/PycharmProjects/PythonProject/dbt/target/osi_document.json
+[0m21:59:19.013200 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '60090a3d-e374-4181-aa1c-1fb45e48c0c2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a5073c9b3b0>]}
+[0m21:59:19.013603 [info ] [MainThread]: Found 3 models, 7 data tests, 1 source, 614 macros
+[0m21:59:19.013915 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '60090a3d-e374-4181-aa1c-1fb45e48c0c2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a50823cd3d0>]}
+[0m21:59:19.015419 [info ] [MainThread]: 
+[0m21:59:19.015739 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m21:59:19.016027 [info ] [MainThread]: 
+[0m21:59:19.016475 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m21:59:19.020553 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_chicago_taxi'
+[0m21:59:19.047299 [debug] [ThreadPool]: Using duckdb connection "list_chicago_taxi"
+[0m21:59:19.047728 [debug] [ThreadPool]: On list_chicago_taxi: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "connection_name": "list_chicago_taxi"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"chicago_taxi"'
+    
+  
+  
+[0m21:59:19.048037 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:59:19.061660 [debug] [ThreadPool]: SQL status: OK in 0.014 seconds
+[0m21:59:19.062810 [debug] [ThreadPool]: On list_chicago_taxi: Close
+[0m21:59:19.063444 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_chicago_taxi, now create_chicago_taxi_gold)
+[0m21:59:19.063870 [debug] [ThreadPool]: Creating schema "database: "chicago_taxi"
+schema: "gold"
+"
+[0m21:59:19.070105 [debug] [ThreadPool]: Using duckdb connection "create_chicago_taxi_gold"
+[0m21:59:19.070544 [debug] [ThreadPool]: On create_chicago_taxi_gold: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "connection_name": "create_chicago_taxi_gold"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='chicago_taxi'
+        and type != 'duckdb'
+    
+  
+[0m21:59:19.070889 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m21:59:19.072446 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m21:59:19.073801 [debug] [ThreadPool]: Using duckdb connection "create_chicago_taxi_gold"
+[0m21:59:19.074224 [debug] [ThreadPool]: On create_chicago_taxi_gold: BEGIN
+[0m21:59:19.074838 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m21:59:19.075185 [debug] [ThreadPool]: Using duckdb connection "create_chicago_taxi_gold"
+[0m21:59:19.075537 [debug] [ThreadPool]: On create_chicago_taxi_gold: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "connection_name": "create_chicago_taxi_gold"} */
+
+    
+    
+        create schema if not exists "chicago_taxi"."gold"
+    
+[0m21:59:19.076308 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m21:59:19.077162 [debug] [ThreadPool]: On create_chicago_taxi_gold: COMMIT
+[0m21:59:19.077536 [debug] [ThreadPool]: Using duckdb connection "create_chicago_taxi_gold"
+[0m21:59:19.077880 [debug] [ThreadPool]: On create_chicago_taxi_gold: COMMIT
+[0m21:59:19.079360 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m21:59:19.079729 [debug] [ThreadPool]: On create_chicago_taxi_gold: Close
+[0m21:59:19.080950 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_chicago_taxi_gold, now list_chicago_taxi_gold)
+[0m21:59:19.085587 [debug] [ThreadPool]: Using duckdb connection "list_chicago_taxi_gold"
+[0m21:59:19.085984 [debug] [ThreadPool]: On list_chicago_taxi_gold: BEGIN
+[0m21:59:19.086335 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m21:59:19.087048 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m21:59:19.087410 [debug] [ThreadPool]: Using duckdb connection "list_chicago_taxi_gold"
+[0m21:59:19.087809 [debug] [ThreadPool]: On list_chicago_taxi_gold: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "connection_name": "list_chicago_taxi_gold"} */
+select
+      'chicago_taxi' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'gold'
+    and lower(table_catalog) = 'chicago_taxi'
+  
+[0m21:59:19.092084 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m21:59:19.093499 [debug] [ThreadPool]: On list_chicago_taxi_gold: ROLLBACK
+[0m21:59:19.094109 [debug] [ThreadPool]: On list_chicago_taxi_gold: Close
+[0m21:59:19.094803 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '60090a3d-e374-4181-aa1c-1fb45e48c0c2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a5073e77b60>]}
+[0m21:59:19.095327 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:59:19.095695 [debug] [MainThread]: On master: BEGIN
+[0m21:59:19.096047 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m21:59:19.096670 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m21:59:19.097043 [debug] [MainThread]: On master: COMMIT
+[0m21:59:19.097413 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:59:19.097761 [debug] [MainThread]: On master: COMMIT
+[0m21:59:19.098326 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m21:59:19.098697 [debug] [MainThread]: On master: Close
+[0m21:59:19.100932 [debug] [Thread-1 (]: Began running node model.chicago_taxi_dbt.dim_location
+[0m21:59:19.101475 [info ] [Thread-1 (]: 1 of 3 START sql table model gold.dim_location ................................. [RUN]
+[0m21:59:19.102310 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_chicago_taxi_gold, now model.chicago_taxi_dbt.dim_location)
+[0m21:59:19.102721 [debug] [Thread-1 (]: Began compiling node model.chicago_taxi_dbt.dim_location
+[0m21:59:19.110982 [debug] [Thread-1 (]: Writing injected SQL for node "model.chicago_taxi_dbt.dim_location"
+[0m21:59:19.111751 [debug] [Thread-1 (]: Began executing node model.chicago_taxi_dbt.dim_location
+[0m21:59:19.162587 [debug] [Thread-1 (]: Writing runtime sql for node "model.chicago_taxi_dbt.dim_location"
+[0m21:59:19.163328 [debug] [Thread-1 (]: Using duckdb connection "model.chicago_taxi_dbt.dim_location"
+[0m21:59:19.163735 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_location: BEGIN
+[0m21:59:19.164117 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:59:19.164892 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m21:59:19.165295 [debug] [Thread-1 (]: Using duckdb connection "model.chicago_taxi_dbt.dim_location"
+[0m21:59:19.165702 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_location: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "node_id": "model.chicago_taxi_dbt.dim_location"} */
+
+    
+
+    create  table
+      "chicago_taxi"."gold"."dim_location__dbt_tmp"
+  
+    
+    as (
+      with silver_data as (
+    select *
+    from "chicago_taxi"."silver"."taxi_data_silver"
+)
+
+select distinct
+    md5(cast(coalesce(cast(pickup_community_area as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(pickup_census_tract as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(dropoff_community_area as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(dropoff_census_tract as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as location_key,
+    pickup_community_area,
+    pickup_census_tract,
+    dropoff_community_area,
+    dropoff_census_tract
+from silver_data
+    );
+    
+  
+[0m21:59:19.172533 [debug] [Thread-1 (]: DuckDB adapter: duckdb error: Catalog Error: Table with name "silver.taxi_data_silver" does not exist because schema "silver" does not exist.
+
+LINE 12:     from "chicago_taxi"."silver"."taxi_data_silver"
+                  ^
+[0m21:59:19.173238 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "node_id": "model.chicago_taxi_dbt.dim_location"} */
+
+    
+
+    create  table
+      "chicago_taxi"."gold"."dim_location__dbt_tmp"
+  
+    
+    as (
+      with silver_data as (
+    select *
+    from "chicago_taxi"."silver"."taxi_data_silver"
+)
+
+select distinct
+    md5(cast(coalesce(cast(pickup_community_area as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(pickup_census_tract as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(dropoff_community_area as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(dropoff_census_tract as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as location_key,
+    pickup_community_area,
+    pickup_census_tract,
+    dropoff_community_area,
+    dropoff_census_tract
+from silver_data
+    );
+    
+  
+[0m21:59:19.173786 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m21:59:19.174193 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_location: ROLLBACK
+[0m21:59:19.174994 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_location: Close
+[0m21:59:19.183137 [debug] [Thread-1 (]: Runtime Error in model dim_location (models/dim_location.sql)
+  Catalog Error: Table with name "silver.taxi_data_silver" does not exist because schema "silver" does not exist.
+  
+  LINE 12:     from "chicago_taxi"."silver"."taxi_data_silver"
+                    ^
+[0m21:59:19.185172 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '60090a3d-e374-4181-aa1c-1fb45e48c0c2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a5073e77d10>]}
+[0m21:59:19.185964 [error] [Thread-1 (]: 1 of 3 ERROR creating sql table model gold.dim_location ........................ [[31mERROR[0m in 0.08s]
+[0m21:59:19.186852 [debug] [Thread-1 (]: Finished running node model.chicago_taxi_dbt.dim_location
+[0m21:59:19.187341 [debug] [Thread-1 (]: Began running node model.chicago_taxi_dbt.dim_trips
+[0m21:59:19.187966 [debug] [Thread-4 (]: Marking all children of 'model.chicago_taxi_dbt.dim_location' to be skipped because of status 'error'.  Reason: Runtime Error in model dim_location (models/dim_location.sql)
+  Catalog Error: Table with name "silver.taxi_data_silver" does not exist because schema "silver" does not exist.
+  
+  LINE 12:     from "chicago_taxi"."silver"."taxi_data_silver"
+                    ^.
+[0m21:59:19.188561 [info ] [Thread-1 (]: 2 of 3 START sql table model gold.dim_trips .................................... [RUN]
+[0m21:59:19.189824 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.chicago_taxi_dbt.dim_location, now model.chicago_taxi_dbt.dim_trips)
+[0m21:59:19.190260 [debug] [Thread-1 (]: Began compiling node model.chicago_taxi_dbt.dim_trips
+[0m21:59:19.192576 [debug] [Thread-1 (]: Writing injected SQL for node "model.chicago_taxi_dbt.dim_trips"
+[0m21:59:19.193627 [debug] [Thread-1 (]: Began executing node model.chicago_taxi_dbt.dim_trips
+[0m21:59:19.199231 [debug] [Thread-1 (]: Writing runtime sql for node "model.chicago_taxi_dbt.dim_trips"
+[0m21:59:19.199871 [debug] [Thread-1 (]: Using duckdb connection "model.chicago_taxi_dbt.dim_trips"
+[0m21:59:19.200292 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_trips: BEGIN
+[0m21:59:19.200685 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:59:19.201443 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m21:59:19.201848 [debug] [Thread-1 (]: Using duckdb connection "model.chicago_taxi_dbt.dim_trips"
+[0m21:59:19.202271 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_trips: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "node_id": "model.chicago_taxi_dbt.dim_trips"} */
+
+    
+
+    create  table
+      "chicago_taxi"."gold"."dim_trips__dbt_tmp"
+  
+    
+    as (
+      with silver_data as (
+    select *
+    from "chicago_taxi"."silver"."taxi_data_silver"
+)
+select distinct
+    trip_id,
+    taxi_id,
+    trip_seconds,
+    trip_miles,
+    fare,
+    tips,
+    trip_total,
+    trip_start_timestamp,
+    trip_end_timestamp
+from silver_data
+    );
+    
+  
+[0m21:59:19.202995 [debug] [Thread-1 (]: DuckDB adapter: duckdb error: Catalog Error: Table with name "silver.taxi_data_silver" does not exist because schema "silver" does not exist.
+
+LINE 12:     from "chicago_taxi"."silver"."taxi_data_silver"
+                  ^
+[0m21:59:19.203434 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "node_id": "model.chicago_taxi_dbt.dim_trips"} */
+
+    
+
+    create  table
+      "chicago_taxi"."gold"."dim_trips__dbt_tmp"
+  
+    
+    as (
+      with silver_data as (
+    select *
+    from "chicago_taxi"."silver"."taxi_data_silver"
+)
+select distinct
+    trip_id,
+    taxi_id,
+    trip_seconds,
+    trip_miles,
+    fare,
+    tips,
+    trip_total,
+    trip_start_timestamp,
+    trip_end_timestamp
+from silver_data
+    );
+    
+  
+[0m21:59:19.203848 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m21:59:19.204250 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_trips: ROLLBACK
+[0m21:59:19.204957 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_trips: Close
+[0m21:59:19.207190 [debug] [Thread-1 (]: Runtime Error in model dim_trips (models/dim_trips.sql)
+  Catalog Error: Table with name "silver.taxi_data_silver" does not exist because schema "silver" does not exist.
+  
+  LINE 12:     from "chicago_taxi"."silver"."taxi_data_silver"
+                    ^
+[0m21:59:19.207681 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '60090a3d-e374-4181-aa1c-1fb45e48c0c2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a50730811c0>]}
+[0m21:59:19.208356 [error] [Thread-1 (]: 2 of 3 ERROR creating sql table model gold.dim_trips ........................... [[31mERROR[0m in 0.02s]
+[0m21:59:19.209145 [debug] [Thread-1 (]: Finished running node model.chicago_taxi_dbt.dim_trips
+[0m21:59:19.209614 [debug] [Thread-1 (]: Began running node model.chicago_taxi_dbt.fact_trips
+[0m21:59:19.210306 [debug] [Thread-4 (]: Marking all children of 'model.chicago_taxi_dbt.dim_trips' to be skipped because of status 'error'.  Reason: Runtime Error in model dim_trips (models/dim_trips.sql)
+  Catalog Error: Table with name "silver.taxi_data_silver" does not exist because schema "silver" does not exist.
+  
+  LINE 12:     from "chicago_taxi"."silver"."taxi_data_silver"
+                    ^.
+[0m21:59:19.211157 [info ] [Thread-1 (]: 3 of 3 START sql table model gold.fact_trips ................................... [RUN]
+[0m21:59:19.212017 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.chicago_taxi_dbt.dim_trips, now model.chicago_taxi_dbt.fact_trips)
+[0m21:59:19.212515 [debug] [Thread-1 (]: Began compiling node model.chicago_taxi_dbt.fact_trips
+[0m21:59:19.219657 [debug] [Thread-1 (]: Writing injected SQL for node "model.chicago_taxi_dbt.fact_trips"
+[0m21:59:19.220348 [debug] [Thread-1 (]: Began executing node model.chicago_taxi_dbt.fact_trips
+[0m21:59:19.223298 [debug] [Thread-1 (]: Writing runtime sql for node "model.chicago_taxi_dbt.fact_trips"
+[0m21:59:19.223928 [debug] [Thread-1 (]: Using duckdb connection "model.chicago_taxi_dbt.fact_trips"
+[0m21:59:19.224351 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.fact_trips: BEGIN
+[0m21:59:19.224752 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:59:19.225489 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m21:59:19.225902 [debug] [Thread-1 (]: Using duckdb connection "model.chicago_taxi_dbt.fact_trips"
+[0m21:59:19.226339 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.fact_trips: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "node_id": "model.chicago_taxi_dbt.fact_trips"} */
+
+    
+
+    create  table
+      "chicago_taxi"."gold"."fact_trips__dbt_tmp"
+  
+    
+    as (
+      with silver_data as (
+    select * from "chicago_taxi"."silver"."taxi_data_silver"
+)
+
+select
+    trip_id,
+    taxi_id,
+    md5(cast(coalesce(cast(pickup_community_area as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(pickup_census_tract as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(dropoff_community_area as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(dropoff_census_tract as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as location_key,
+    trip_start_timestamp,
+    trip_end_timestamp,
+    trip_seconds,
+    trip_miles,
+    fare,
+    tips,
+    tolls,
+    extras,
+    trip_total,
+    payment_type,
+    company
+from silver_data
+    );
+    
+  
+[0m21:59:19.298803 [debug] [Thread-1 (]: DuckDB adapter: duckdb error: Catalog Error: Table with name "silver.taxi_data_silver" does not exist because schema "silver" does not exist.
+
+LINE 11:     select * from "chicago_taxi"."silver"."taxi_data_silver"
+                           ^
+[0m21:59:19.299553 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "node_id": "model.chicago_taxi_dbt.fact_trips"} */
+
+    
+
+    create  table
+      "chicago_taxi"."gold"."fact_trips__dbt_tmp"
+  
+    
+    as (
+      with silver_data as (
+    select * from "chicago_taxi"."silver"."taxi_data_silver"
+)
+
+select
+    trip_id,
+    taxi_id,
+    md5(cast(coalesce(cast(pickup_community_area as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(pickup_census_tract as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(dropoff_community_area as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(dropoff_census_tract as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as location_key,
+    trip_start_timestamp,
+    trip_end_timestamp,
+    trip_seconds,
+    trip_miles,
+    fare,
+    tips,
+    tolls,
+    extras,
+    trip_total,
+    payment_type,
+    company
+from silver_data
+    );
+    
+  
+[0m21:59:19.300246 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m21:59:19.300994 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.fact_trips: ROLLBACK
+[0m21:59:19.302204 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.fact_trips: Close
+[0m21:59:19.305237 [debug] [Thread-1 (]: Runtime Error in model fact_trips (models/fact_trips.sql)
+  Catalog Error: Table with name "silver.taxi_data_silver" does not exist because schema "silver" does not exist.
+  
+  LINE 11:     select * from "chicago_taxi"."silver"."taxi_data_silver"
+                             ^
+[0m21:59:19.305830 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '60090a3d-e374-4181-aa1c-1fb45e48c0c2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a508d51c9e0>]}
+[0m21:59:19.306618 [error] [Thread-1 (]: 3 of 3 ERROR creating sql table model gold.fact_trips .......................... [[31mERROR[0m in 0.09s]
+[0m21:59:19.307431 [debug] [Thread-1 (]: Finished running node model.chicago_taxi_dbt.fact_trips
+[0m21:59:19.308178 [debug] [Thread-4 (]: Marking all children of 'model.chicago_taxi_dbt.fact_trips' to be skipped because of status 'error'.  Reason: Runtime Error in model fact_trips (models/fact_trips.sql)
+  Catalog Error: Table with name "silver.taxi_data_silver" does not exist because schema "silver" does not exist.
+  
+  LINE 11:     select * from "chicago_taxi"."silver"."taxi_data_silver"
+                             ^.
+[0m21:59:19.309598 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:59:19.310063 [debug] [MainThread]: On master: BEGIN
+[0m21:59:19.310498 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m21:59:19.311363 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m21:59:19.311848 [debug] [MainThread]: On master: COMMIT
+[0m21:59:19.312311 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:59:19.312739 [debug] [MainThread]: On master: COMMIT
+[0m21:59:19.313533 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m21:59:19.313993 [debug] [MainThread]: On master: Close
+[0m21:59:19.314630 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m21:59:19.315060 [debug] [MainThread]: Connection 'model.chicago_taxi_dbt.fact_trips' was properly closed.
+[0m21:59:19.315630 [info ] [MainThread]: 
+[0m21:59:19.316206 [info ] [MainThread]: Finished running 3 table models in 0 hours 0 minutes and 0.30 seconds (0.30s).
+[0m21:59:19.317714 [debug] [MainThread]: Command end result
+[0m21:59:19.360616 [debug] [MainThread]: Wrote artifact WritableManifest to /home/mona/PycharmProjects/PythonProject/dbt/target/manifest.json
+[0m21:59:19.363166 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/mona/PycharmProjects/PythonProject/dbt/target/semantic_manifest.json
+[0m21:59:19.365734 [debug] [MainThread]: Wrote artifact OsiDocument to /home/mona/PycharmProjects/PythonProject/dbt/target/osi_document.json
+[0m21:59:19.372688 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/mona/PycharmProjects/PythonProject/dbt/target/run_results.json
+[0m21:59:19.373165 [info ] [MainThread]: 
+[0m21:59:19.373736 [info ] [MainThread]: [31mCompleted with 3 errors, 0 partial successes, and 0 warnings:[0m
+[0m21:59:19.374288 [info ] [MainThread]: 
+[0m21:59:19.374836 [error] [MainThread]: [[31mERROR[0m]: in model dim_location (models/dim_location.sql)
+[0m21:59:19.375395 [error] [MainThread]:   Runtime Error in model dim_location (models/dim_location.sql)
+  Catalog Error: Table with name "silver.taxi_data_silver" does not exist because schema "silver" does not exist.
+  
+  LINE 12:     from "chicago_taxi"."silver"."taxi_data_silver"
+                    ^
+[0m21:59:19.375835 [info ] [MainThread]: 
+[0m21:59:19.376427 [info ] [MainThread]:   compiled code at target/compiled/chicago_taxi_dbt/models/dim_location.sql
+[0m21:59:19.376907 [info ] [MainThread]: 
+[0m21:59:19.377431 [error] [MainThread]: [[31mERROR[0m]: in model dim_trips (models/dim_trips.sql)
+[0m21:59:19.377910 [error] [MainThread]:   Runtime Error in model dim_trips (models/dim_trips.sql)
+  Catalog Error: Table with name "silver.taxi_data_silver" does not exist because schema "silver" does not exist.
+  
+  LINE 12:     from "chicago_taxi"."silver"."taxi_data_silver"
+                    ^
+[0m21:59:19.378318 [info ] [MainThread]: 
+[0m21:59:19.378781 [info ] [MainThread]:   compiled code at target/compiled/chicago_taxi_dbt/models/dim_trips.sql
+[0m21:59:19.379201 [info ] [MainThread]: 
+[0m21:59:19.379743 [error] [MainThread]: [[31mERROR[0m]: in model fact_trips (models/fact_trips.sql)
+[0m21:59:19.380192 [error] [MainThread]:   Runtime Error in model fact_trips (models/fact_trips.sql)
+  Catalog Error: Table with name "silver.taxi_data_silver" does not exist because schema "silver" does not exist.
+  
+  LINE 11:     select * from "chicago_taxi"."silver"."taxi_data_silver"
+                             ^
+[0m21:59:19.380577 [info ] [MainThread]: 
+[0m21:59:19.380998 [info ] [MainThread]:   compiled code at target/compiled/chicago_taxi_dbt/models/fact_trips.sql
+[0m21:59:19.381371 [info ] [MainThread]: 
+[0m21:59:19.381777 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=3 SKIP=0 NO-OP=0 REUSED=0 TOTAL=3
+[0m21:59:19.382330 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m21:59:19.383279 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 2.8552403, "process_in_blocks": "6528", "process_kernel_time": 0.195187, "process_mem_max_rss": "176200", "process_out_blocks": "4680", "process_user_time": 4.161004}
+[0m21:59:19.383793 [debug] [MainThread]: Command `dbt run` failed at 21:59:19.383692 after 2.86 seconds
+[0m21:59:19.384200 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a508d74c3e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a508d74e210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a5073146870>]}
+[0m21:59:19.384620 [debug] [MainThread]: Flushing usage events
+[0m21:59:22.031758 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:02:16.948941 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77807d80dc40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77807d80e840>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77807d80d9d0>]}
+
+
+============================== 22:02:16.951572 | 07c5bbcc-b9d4-4369-aeae-c89e13f85c75 ==============================
+[0m22:02:16.951572 [info ] [MainThread]: Running with dbt=1.12.4
+[0m22:02:16.952121 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'target_path': 'None', 'introspect': 'True', 'hints_enabled': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt run', 'maximum_seed_size_mib': '1', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'profiles_dir': '/home/mona/.dbt', 'write_json': 'True', 'printer_width': '80', 'use_experimental_parser': 'False', 'no_print': 'None', 'empty': 'False', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'log_path': '/home/mona/PycharmProjects/PythonProject/dbt/logs', 'version_check': 'True', 'use_colors': 'True', 'warn_error': 'None', 'fail_fast': 'False', 'log_cache_events': 'False', 'static_parser': 'True'}
+[0m22:02:17.194430 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '07c5bbcc-b9d4-4369-aeae-c89e13f85c75', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x778074542150>]}
+[0m22:02:17.268044 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '07c5bbcc-b9d4-4369-aeae-c89e13f85c75', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77807c3207a0>]}
+[0m22:02:17.269798 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m22:02:17.357452 [debug] [MainThread]: checksum: 4b125ace8e4d4b1c5105e1f82b9265449ec04590296dd1ff86d37b8bfa277925, vars: {}, profile: chicago_taxi_dbt, target: dev, version: 1.12.4
+[0m22:02:17.496804 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 4 files changed.
+[0m22:02:17.497714 [debug] [MainThread]: Partial parsing: updated file: chicago_taxi_dbt://models/fact_trips.sql
+[0m22:02:17.498164 [debug] [MainThread]: Partial parsing: updated file: chicago_taxi_dbt://models/schema.yml
+[0m22:02:17.498585 [debug] [MainThread]: Partial parsing: updated file: chicago_taxi_dbt://models/dim_trips.sql
+[0m22:02:17.498979 [debug] [MainThread]: Partial parsing: updated file: chicago_taxi_dbt://models/fact_trips.sql
+[0m22:02:17.499392 [debug] [MainThread]: Partial parsing: updated file: chicago_taxi_dbt://models/dim_location.sql
+[0m22:02:18.160501 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `relationships` defined on 'fact_trips' in
+package 'chicago_taxi_dbt' (models/schema.yml). Arguments to generic tests
+should be nested under the `arguments` property.
+[0m22:02:18.161016 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '07c5bbcc-b9d4-4369-aeae-c89e13f85c75', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x778073fa7e90>]}
+[0m22:02:18.369150 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '07c5bbcc-b9d4-4369-aeae-c89e13f85c75', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x778071db28a0>]}
+[0m22:02:18.476375 [debug] [MainThread]: Wrote artifact WritableManifest to /home/mona/PycharmProjects/PythonProject/dbt/target/manifest.json
+[0m22:02:18.478877 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/mona/PycharmProjects/PythonProject/dbt/target/semantic_manifest.json
+[0m22:02:18.491696 [debug] [MainThread]: Wrote artifact OsiDocument to /home/mona/PycharmProjects/PythonProject/dbt/target/osi_document.json
+[0m22:02:18.499401 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '07c5bbcc-b9d4-4369-aeae-c89e13f85c75', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x778071cd4380>]}
+[0m22:02:18.499887 [info ] [MainThread]: Found 3 models, 7 data tests, 1 source, 614 macros
+[0m22:02:18.500286 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '07c5bbcc-b9d4-4369-aeae-c89e13f85c75', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x778071c22f30>]}
+[0m22:02:18.502123 [info ] [MainThread]: 
+[0m22:02:18.502535 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m22:02:18.502887 [info ] [MainThread]: 
+[0m22:02:18.503421 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m22:02:18.508609 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_chicago_taxi'
+[0m22:02:18.542164 [debug] [ThreadPool]: Using duckdb connection "list_chicago_taxi"
+[0m22:02:18.542630 [debug] [ThreadPool]: On list_chicago_taxi: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "connection_name": "list_chicago_taxi"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"chicago_taxi"'
+    
+  
+  
+[0m22:02:18.542982 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:02:18.556093 [debug] [ThreadPool]: SQL status: OK in 0.013 seconds
+[0m22:02:18.558144 [debug] [ThreadPool]: On list_chicago_taxi: Close
+[0m22:02:18.559053 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_chicago_taxi, now create_chicago_taxi_gold)
+[0m22:02:18.559666 [debug] [ThreadPool]: Creating schema "database: "chicago_taxi"
+schema: "gold"
+"
+[0m22:02:18.567173 [debug] [ThreadPool]: Using duckdb connection "create_chicago_taxi_gold"
+[0m22:02:18.567602 [debug] [ThreadPool]: On create_chicago_taxi_gold: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "connection_name": "create_chicago_taxi_gold"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='chicago_taxi'
+        and type != 'duckdb'
+    
+  
+[0m22:02:18.567961 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:02:18.569113 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m22:02:18.570397 [debug] [ThreadPool]: Using duckdb connection "create_chicago_taxi_gold"
+[0m22:02:18.570770 [debug] [ThreadPool]: On create_chicago_taxi_gold: BEGIN
+[0m22:02:18.571341 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:02:18.571688 [debug] [ThreadPool]: Using duckdb connection "create_chicago_taxi_gold"
+[0m22:02:18.572027 [debug] [ThreadPool]: On create_chicago_taxi_gold: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "connection_name": "create_chicago_taxi_gold"} */
+
+    
+    
+        create schema if not exists "chicago_taxi"."gold"
+    
+[0m22:02:18.572593 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:02:18.573464 [debug] [ThreadPool]: On create_chicago_taxi_gold: COMMIT
+[0m22:02:18.573843 [debug] [ThreadPool]: Using duckdb connection "create_chicago_taxi_gold"
+[0m22:02:18.574190 [debug] [ThreadPool]: On create_chicago_taxi_gold: COMMIT
+[0m22:02:18.574700 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:02:18.575054 [debug] [ThreadPool]: On create_chicago_taxi_gold: Close
+[0m22:02:18.576352 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_chicago_taxi_gold, now list_chicago_taxi_gold)
+[0m22:02:18.580832 [debug] [ThreadPool]: Using duckdb connection "list_chicago_taxi_gold"
+[0m22:02:18.581260 [debug] [ThreadPool]: On list_chicago_taxi_gold: BEGIN
+[0m22:02:18.581601 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:02:18.582236 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m22:02:18.582584 [debug] [ThreadPool]: Using duckdb connection "list_chicago_taxi_gold"
+[0m22:02:18.582932 [debug] [ThreadPool]: On list_chicago_taxi_gold: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "connection_name": "list_chicago_taxi_gold"} */
+select
+      'chicago_taxi' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'gold'
+    and lower(table_catalog) = 'chicago_taxi'
+  
+[0m22:02:18.585739 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m22:02:18.586929 [debug] [ThreadPool]: On list_chicago_taxi_gold: ROLLBACK
+[0m22:02:18.587436 [debug] [ThreadPool]: On list_chicago_taxi_gold: Close
+[0m22:02:18.588100 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '07c5bbcc-b9d4-4369-aeae-c89e13f85c75', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x778071c21d00>]}
+[0m22:02:18.588599 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:02:18.588950 [debug] [MainThread]: On master: BEGIN
+[0m22:02:18.589302 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:02:18.589907 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m22:02:18.590282 [debug] [MainThread]: On master: COMMIT
+[0m22:02:18.590637 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:02:18.590977 [debug] [MainThread]: On master: COMMIT
+[0m22:02:18.591472 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:02:18.591830 [debug] [MainThread]: On master: Close
+[0m22:02:18.593638 [debug] [Thread-1 (]: Began running node model.chicago_taxi_dbt.dim_location
+[0m22:02:18.594416 [info ] [Thread-1 (]: 1 of 3 START sql table model gold.dim_location ................................. [RUN]
+[0m22:02:18.594954 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_chicago_taxi_gold, now model.chicago_taxi_dbt.dim_location)
+[0m22:02:18.595381 [debug] [Thread-1 (]: Began compiling node model.chicago_taxi_dbt.dim_location
+[0m22:02:18.603386 [debug] [Thread-1 (]: Writing injected SQL for node "model.chicago_taxi_dbt.dim_location"
+[0m22:02:18.603992 [debug] [Thread-1 (]: Began executing node model.chicago_taxi_dbt.dim_location
+[0m22:02:18.655084 [debug] [Thread-1 (]: Writing runtime sql for node "model.chicago_taxi_dbt.dim_location"
+[0m22:02:18.655779 [debug] [Thread-1 (]: Using duckdb connection "model.chicago_taxi_dbt.dim_location"
+[0m22:02:18.656232 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_location: BEGIN
+[0m22:02:18.656703 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:02:18.657490 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:02:18.657894 [debug] [Thread-1 (]: Using duckdb connection "model.chicago_taxi_dbt.dim_location"
+[0m22:02:18.658324 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_location: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "node_id": "model.chicago_taxi_dbt.dim_location"} */
+
+    
+
+    create  table
+      "chicago_taxi"."gold"."dim_location__dbt_tmp"
+  
+    
+    as (
+      with source_data as (
+    select *
+    from read_parquet('/home/mona/PycharmProjects/PythonProject/data/taxi_data_silver/*.parquet')
+)
+
+select distinct
+    md5(cast(coalesce(cast(pickup_community_area as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(pickup_census_tract as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(dropoff_community_area as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(dropoff_census_tract as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as location_key,
+    pickup_community_area,
+    pickup_census_tract,
+    dropoff_community_area,
+    dropoff_census_tract
+from source_data
+    );
+    
+  
+[0m22:02:18.660141 [debug] [Thread-1 (]: DuckDB adapter: duckdb error: IO Error: No files found that match the pattern "/home/mona/PycharmProjects/PythonProject/data/taxi_data_silver/*.parquet"
+
+LINE 12:     from read_parquet('/home/mona/PycharmProjects/PythonProject/data...
+                  ^
+[0m22:02:18.660615 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "node_id": "model.chicago_taxi_dbt.dim_location"} */
+
+    
+
+    create  table
+      "chicago_taxi"."gold"."dim_location__dbt_tmp"
+  
+    
+    as (
+      with source_data as (
+    select *
+    from read_parquet('/home/mona/PycharmProjects/PythonProject/data/taxi_data_silver/*.parquet')
+)
+
+select distinct
+    md5(cast(coalesce(cast(pickup_community_area as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(pickup_census_tract as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(dropoff_community_area as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(dropoff_census_tract as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as location_key,
+    pickup_community_area,
+    pickup_census_tract,
+    dropoff_community_area,
+    dropoff_census_tract
+from source_data
+    );
+    
+  
+[0m22:02:18.661040 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m22:02:18.661443 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_location: ROLLBACK
+[0m22:02:18.662140 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_location: Close
+[0m22:02:18.665443 [debug] [Thread-1 (]: Runtime Error in model dim_location (models/dim_location.sql)
+  IO Error: No files found that match the pattern "/home/mona/PycharmProjects/PythonProject/data/taxi_data_silver/*.parquet"
+  
+  LINE 12:     from read_parquet('/home/mona/PycharmProjects/PythonProject/data...
+                    ^
+[0m22:02:18.667037 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '07c5bbcc-b9d4-4369-aeae-c89e13f85c75', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x778071168d10>]}
+[0m22:02:18.667679 [error] [Thread-1 (]: 1 of 3 ERROR creating sql table model gold.dim_location ........................ [[31mERROR[0m in 0.07s]
+[0m22:02:18.668336 [debug] [Thread-1 (]: Finished running node model.chicago_taxi_dbt.dim_location
+[0m22:02:18.668789 [debug] [Thread-1 (]: Began running node model.chicago_taxi_dbt.dim_trips
+[0m22:02:18.669297 [info ] [Thread-1 (]: 2 of 3 START sql table model gold.dim_trips .................................... [RUN]
+[0m22:02:18.669805 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.chicago_taxi_dbt.dim_location, now model.chicago_taxi_dbt.dim_trips)
+[0m22:02:18.670224 [debug] [Thread-1 (]: Began compiling node model.chicago_taxi_dbt.dim_trips
+[0m22:02:18.671162 [debug] [Thread-1 (]: Writing injected SQL for node "model.chicago_taxi_dbt.dim_trips"
+[0m22:02:18.671799 [debug] [Thread-4 (]: Marking all children of 'model.chicago_taxi_dbt.dim_location' to be skipped because of status 'error'.  Reason: Runtime Error in model dim_location (models/dim_location.sql)
+  IO Error: No files found that match the pattern "/home/mona/PycharmProjects/PythonProject/data/taxi_data_silver/*.parquet"
+  
+  LINE 12:     from read_parquet('/home/mona/PycharmProjects/PythonProject/data...
+                    ^.
+[0m22:02:18.672979 [debug] [Thread-1 (]: Began executing node model.chicago_taxi_dbt.dim_trips
+[0m22:02:18.676123 [debug] [Thread-1 (]: Writing runtime sql for node "model.chicago_taxi_dbt.dim_trips"
+[0m22:02:18.676746 [debug] [Thread-1 (]: Using duckdb connection "model.chicago_taxi_dbt.dim_trips"
+[0m22:02:18.677150 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_trips: BEGIN
+[0m22:02:18.677550 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:02:18.678377 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:02:18.678784 [debug] [Thread-1 (]: Using duckdb connection "model.chicago_taxi_dbt.dim_trips"
+[0m22:02:18.679187 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_trips: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "node_id": "model.chicago_taxi_dbt.dim_trips"} */
+
+    
+
+    create  table
+      "chicago_taxi"."gold"."dim_trips__dbt_tmp"
+  
+    
+    as (
+      with source_data as (
+    select *
+    from read_parquet('/home/mona/PycharmProjects/PythonProject/data/taxi_data_silver/*.parquet')
+)
+
+select distinct
+    trip_id,
+    taxi_id,
+    payment_type,
+    company
+from source_data
+    );
+    
+  
+[0m22:02:18.679997 [debug] [Thread-1 (]: DuckDB adapter: duckdb error: IO Error: No files found that match the pattern "/home/mona/PycharmProjects/PythonProject/data/taxi_data_silver/*.parquet"
+
+LINE 12:     from read_parquet('/home/mona/PycharmProjects/PythonProject/data...
+                  ^
+[0m22:02:18.680437 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "node_id": "model.chicago_taxi_dbt.dim_trips"} */
+
+    
+
+    create  table
+      "chicago_taxi"."gold"."dim_trips__dbt_tmp"
+  
+    
+    as (
+      with source_data as (
+    select *
+    from read_parquet('/home/mona/PycharmProjects/PythonProject/data/taxi_data_silver/*.parquet')
+)
+
+select distinct
+    trip_id,
+    taxi_id,
+    payment_type,
+    company
+from source_data
+    );
+    
+  
+[0m22:02:18.680886 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m22:02:18.681299 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_trips: ROLLBACK
+[0m22:02:18.682098 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_trips: Close
+[0m22:02:18.684325 [debug] [Thread-1 (]: Runtime Error in model dim_trips (models/dim_trips.sql)
+  IO Error: No files found that match the pattern "/home/mona/PycharmProjects/PythonProject/data/taxi_data_silver/*.parquet"
+  
+  LINE 12:     from read_parquet('/home/mona/PycharmProjects/PythonProject/data...
+                    ^
+[0m22:02:18.684809 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '07c5bbcc-b9d4-4369-aeae-c89e13f85c75', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x778071079130>]}
+[0m22:02:18.685454 [error] [Thread-1 (]: 2 of 3 ERROR creating sql table model gold.dim_trips ........................... [[31mERROR[0m in 0.02s]
+[0m22:02:18.686110 [debug] [Thread-1 (]: Finished running node model.chicago_taxi_dbt.dim_trips
+[0m22:02:18.686609 [debug] [Thread-1 (]: Began running node model.chicago_taxi_dbt.fact_trips
+[0m22:02:18.687248 [debug] [Thread-4 (]: Marking all children of 'model.chicago_taxi_dbt.dim_trips' to be skipped because of status 'error'.  Reason: Runtime Error in model dim_trips (models/dim_trips.sql)
+  IO Error: No files found that match the pattern "/home/mona/PycharmProjects/PythonProject/data/taxi_data_silver/*.parquet"
+  
+  LINE 12:     from read_parquet('/home/mona/PycharmProjects/PythonProject/data...
+                    ^.
+[0m22:02:18.688009 [info ] [Thread-1 (]: 3 of 3 START sql table model gold.fact_trips ................................... [RUN]
+[0m22:02:18.689130 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.chicago_taxi_dbt.dim_trips, now model.chicago_taxi_dbt.fact_trips)
+[0m22:02:18.689877 [debug] [Thread-1 (]: Began compiling node model.chicago_taxi_dbt.fact_trips
+[0m22:02:18.694374 [debug] [Thread-1 (]: Writing injected SQL for node "model.chicago_taxi_dbt.fact_trips"
+[0m22:02:18.695192 [debug] [Thread-1 (]: Began executing node model.chicago_taxi_dbt.fact_trips
+[0m22:02:18.698552 [debug] [Thread-1 (]: Writing runtime sql for node "model.chicago_taxi_dbt.fact_trips"
+[0m22:02:18.699251 [debug] [Thread-1 (]: Using duckdb connection "model.chicago_taxi_dbt.fact_trips"
+[0m22:02:18.699668 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.fact_trips: BEGIN
+[0m22:02:18.700060 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:02:18.700871 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:02:18.701493 [debug] [Thread-1 (]: Using duckdb connection "model.chicago_taxi_dbt.fact_trips"
+[0m22:02:18.701923 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.fact_trips: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "node_id": "model.chicago_taxi_dbt.fact_trips"} */
+
+    
+
+    create  table
+      "chicago_taxi"."gold"."fact_trips__dbt_tmp"
+  
+    
+    as (
+      with source_data as (
+    select *
+    from read_parquet('/home/mona/PycharmProjects/PythonProject/data/taxi_data_silver/*.parquet')
+)
+
+select
+    trip_id,
+    md5(cast(coalesce(cast(pickup_community_area as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(pickup_census_tract as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(dropoff_community_area as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(dropoff_census_tract as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as location_key,
+    trip_start_timestamp,
+    trip_end_timestamp,
+    trip_seconds,
+    trip_miles,
+    fare,
+    tips,
+    tolls,
+    extras,
+    trip_total
+from source_data
+    );
+    
+  
+[0m22:02:18.702814 [debug] [Thread-1 (]: DuckDB adapter: duckdb error: IO Error: No files found that match the pattern "/home/mona/PycharmProjects/PythonProject/data/taxi_data_silver/*.parquet"
+
+LINE 12:     from read_parquet('/home/mona/PycharmProjects/PythonProject/data...
+                  ^
+[0m22:02:18.703275 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "node_id": "model.chicago_taxi_dbt.fact_trips"} */
+
+    
+
+    create  table
+      "chicago_taxi"."gold"."fact_trips__dbt_tmp"
+  
+    
+    as (
+      with source_data as (
+    select *
+    from read_parquet('/home/mona/PycharmProjects/PythonProject/data/taxi_data_silver/*.parquet')
+)
+
+select
+    trip_id,
+    md5(cast(coalesce(cast(pickup_community_area as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(pickup_census_tract as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(dropoff_community_area as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(dropoff_census_tract as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as location_key,
+    trip_start_timestamp,
+    trip_end_timestamp,
+    trip_seconds,
+    trip_miles,
+    fare,
+    tips,
+    tolls,
+    extras,
+    trip_total
+from source_data
+    );
+    
+  
+[0m22:02:18.703712 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m22:02:18.704112 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.fact_trips: ROLLBACK
+[0m22:02:18.704823 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.fact_trips: Close
+[0m22:02:18.707885 [debug] [Thread-1 (]: Runtime Error in model fact_trips (models/fact_trips.sql)
+  IO Error: No files found that match the pattern "/home/mona/PycharmProjects/PythonProject/data/taxi_data_silver/*.parquet"
+  
+  LINE 12:     from read_parquet('/home/mona/PycharmProjects/PythonProject/data...
+                    ^
+[0m22:02:18.708781 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '07c5bbcc-b9d4-4369-aeae-c89e13f85c75', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7780711d5040>]}
+[0m22:02:18.710149 [error] [Thread-1 (]: 3 of 3 ERROR creating sql table model gold.fact_trips .......................... [[31mERROR[0m in 0.02s]
+[0m22:02:18.711407 [debug] [Thread-1 (]: Finished running node model.chicago_taxi_dbt.fact_trips
+[0m22:02:18.712281 [debug] [Thread-4 (]: Marking all children of 'model.chicago_taxi_dbt.fact_trips' to be skipped because of status 'error'.  Reason: Runtime Error in model fact_trips (models/fact_trips.sql)
+  IO Error: No files found that match the pattern "/home/mona/PycharmProjects/PythonProject/data/taxi_data_silver/*.parquet"
+  
+  LINE 12:     from read_parquet('/home/mona/PycharmProjects/PythonProject/data...
+                    ^.
+[0m22:02:18.713510 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:02:18.713922 [debug] [MainThread]: On master: BEGIN
+[0m22:02:18.714294 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m22:02:18.714969 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m22:02:18.715343 [debug] [MainThread]: On master: COMMIT
+[0m22:02:18.715698 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:02:18.716045 [debug] [MainThread]: On master: COMMIT
+[0m22:02:18.716554 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:02:18.716921 [debug] [MainThread]: On master: Close
+[0m22:02:18.717401 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:02:18.717741 [debug] [MainThread]: Connection 'model.chicago_taxi_dbt.fact_trips' was properly closed.
+[0m22:02:18.718142 [info ] [MainThread]: 
+[0m22:02:18.718545 [info ] [MainThread]: Finished running 3 table models in 0 hours 0 minutes and 0.21 seconds (0.21s).
+[0m22:02:18.719566 [debug] [MainThread]: Command end result
+[0m22:02:18.759636 [debug] [MainThread]: Wrote artifact WritableManifest to /home/mona/PycharmProjects/PythonProject/dbt/target/manifest.json
+[0m22:02:18.762291 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/mona/PycharmProjects/PythonProject/dbt/target/semantic_manifest.json
+[0m22:02:18.764685 [debug] [MainThread]: Wrote artifact OsiDocument to /home/mona/PycharmProjects/PythonProject/dbt/target/osi_document.json
+[0m22:02:18.773725 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/mona/PycharmProjects/PythonProject/dbt/target/run_results.json
+[0m22:02:18.774183 [info ] [MainThread]: 
+[0m22:02:18.774656 [info ] [MainThread]: [31mCompleted with 3 errors, 0 partial successes, and 0 warnings:[0m
+[0m22:02:18.775064 [info ] [MainThread]: 
+[0m22:02:18.775633 [error] [MainThread]: [[31mERROR[0m]: in model dim_location (models/dim_location.sql)
+[0m22:02:18.776111 [error] [MainThread]:   Runtime Error in model dim_location (models/dim_location.sql)
+  IO Error: No files found that match the pattern "/home/mona/PycharmProjects/PythonProject/data/taxi_data_silver/*.parquet"
+  
+  LINE 12:     from read_parquet('/home/mona/PycharmProjects/PythonProject/data...
+                    ^
+[0m22:02:18.776507 [info ] [MainThread]: 
+[0m22:02:18.776942 [info ] [MainThread]:   compiled code at target/compiled/chicago_taxi_dbt/models/dim_location.sql
+[0m22:02:18.777346 [info ] [MainThread]: 
+[0m22:02:18.777803 [error] [MainThread]: [[31mERROR[0m]: in model dim_trips (models/dim_trips.sql)
+[0m22:02:18.778256 [error] [MainThread]:   Runtime Error in model dim_trips (models/dim_trips.sql)
+  IO Error: No files found that match the pattern "/home/mona/PycharmProjects/PythonProject/data/taxi_data_silver/*.parquet"
+  
+  LINE 12:     from read_parquet('/home/mona/PycharmProjects/PythonProject/data...
+                    ^
+[0m22:02:18.778629 [info ] [MainThread]: 
+[0m22:02:18.779055 [info ] [MainThread]:   compiled code at target/compiled/chicago_taxi_dbt/models/dim_trips.sql
+[0m22:02:18.779439 [info ] [MainThread]: 
+[0m22:02:18.779881 [error] [MainThread]: [[31mERROR[0m]: in model fact_trips (models/fact_trips.sql)
+[0m22:02:18.780323 [error] [MainThread]:   Runtime Error in model fact_trips (models/fact_trips.sql)
+  IO Error: No files found that match the pattern "/home/mona/PycharmProjects/PythonProject/data/taxi_data_silver/*.parquet"
+  
+  LINE 12:     from read_parquet('/home/mona/PycharmProjects/PythonProject/data...
+                    ^
+[0m22:02:18.780705 [info ] [MainThread]: 
+[0m22:02:18.781136 [info ] [MainThread]:   compiled code at target/compiled/chicago_taxi_dbt/models/fact_trips.sql
+[0m22:02:18.781520 [info ] [MainThread]: 
+[0m22:02:18.781998 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=3 SKIP=0 NO-OP=0 REUSED=0 TOTAL=3
+[0m22:02:18.782662 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m22:02:18.783566 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.9171162, "process_in_blocks": "520", "process_kernel_time": 0.185758, "process_mem_max_rss": "177588", "process_out_blocks": "4680", "process_user_time": 3.302705}
+[0m22:02:18.784079 [debug] [MainThread]: Command `dbt run` failed at 22:02:18.783976 after 1.92 seconds
+[0m22:02:18.784513 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7780741b6cc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x778071e749b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77807d297770>]}
+[0m22:02:18.784929 [debug] [MainThread]: Flushing usage events
+[0m22:02:23.226961 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:03:47.435460 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a0ab4a479e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a0ab237bc80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a0ab17e2870>]}
+
+
+============================== 22:03:47.437701 | 7da21d29-5fea-46bd-aee7-1befdc112e9b ==============================
+[0m22:03:47.437701 [info ] [MainThread]: Running with dbt=1.12.4
+[0m22:03:47.438155 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'write_json': 'True', 'fail_fast': 'False', 'debug': 'False', 'no_print': 'None', 'quiet': 'False', 'maximum_seed_size_mib': '1', 'cache_selected_only': 'False', 'version_check': 'True', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False', 'warn_error': 'None', 'log_path': '/home/mona/PycharmProjects/PythonProject/dbt/logs', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'target_path': 'None', 'invocation_command': 'dbt run', 'profiles_dir': '/home/mona/.dbt', 'printer_width': '80', 'hints_enabled': 'True', 'empty': 'False', 'log_format': 'default', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'use_colors': 'True'}
+[0m22:03:47.640085 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '7da21d29-5fea-46bd-aee7-1befdc112e9b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a0ab165b1d0>]}
+[0m22:03:47.699654 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '7da21d29-5fea-46bd-aee7-1befdc112e9b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a0ab17524e0>]}
+[0m22:03:47.701143 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m22:03:47.775563 [debug] [MainThread]: checksum: 4b125ace8e4d4b1c5105e1f82b9265449ec04590296dd1ff86d37b8bfa277925, vars: {}, profile: chicago_taxi_dbt, target: dev, version: 1.12.4
+[0m22:03:47.891776 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 3 files changed.
+[0m22:03:47.892401 [debug] [MainThread]: Partial parsing: updated file: chicago_taxi_dbt://models/fact_trips.sql
+[0m22:03:47.892718 [debug] [MainThread]: Partial parsing: updated file: chicago_taxi_dbt://models/dim_location.sql
+[0m22:03:47.893041 [debug] [MainThread]: Partial parsing: updated file: chicago_taxi_dbt://models/fact_trips.sql
+[0m22:03:47.893427 [debug] [MainThread]: Partial parsing: updated file: chicago_taxi_dbt://models/dim_trips.sql
+[0m22:03:48.444715 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `relationships` defined on 'fact_trips' in
+package 'chicago_taxi_dbt' (models/schema.yml). Arguments to generic tests
+should be nested under the `arguments` property.
+[0m22:03:48.445232 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '7da21d29-5fea-46bd-aee7-1befdc112e9b', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a0aa800fe00>]}
+[0m22:03:48.522655 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '7da21d29-5fea-46bd-aee7-1befdc112e9b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a0ab15048f0>]}
+[0m22:03:48.620415 [debug] [MainThread]: Wrote artifact WritableManifest to /home/mona/PycharmProjects/PythonProject/dbt/target/manifest.json
+[0m22:03:48.622521 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/mona/PycharmProjects/PythonProject/dbt/target/semantic_manifest.json
+[0m22:03:48.633234 [debug] [MainThread]: Wrote artifact OsiDocument to /home/mona/PycharmProjects/PythonProject/dbt/target/osi_document.json
+[0m22:03:48.639532 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '7da21d29-5fea-46bd-aee7-1befdc112e9b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a0a8b128c50>]}
+[0m22:03:48.639934 [info ] [MainThread]: Found 3 models, 7 data tests, 1 source, 614 macros
+[0m22:03:48.640296 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7da21d29-5fea-46bd-aee7-1befdc112e9b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a0ab15807d0>]}
+[0m22:03:48.641898 [info ] [MainThread]: 
+[0m22:03:48.642340 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m22:03:48.642734 [info ] [MainThread]: 
+[0m22:03:48.643306 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m22:03:48.647665 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_chicago_taxi'
+[0m22:03:48.676072 [debug] [ThreadPool]: Using duckdb connection "list_chicago_taxi"
+[0m22:03:48.676440 [debug] [ThreadPool]: On list_chicago_taxi: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "connection_name": "list_chicago_taxi"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"chicago_taxi"'
+    
+  
+  
+[0m22:03:48.676733 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:03:48.688171 [debug] [ThreadPool]: SQL status: OK in 0.011 seconds
+[0m22:03:48.689297 [debug] [ThreadPool]: On list_chicago_taxi: Close
+[0m22:03:48.689937 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_chicago_taxi, now create_chicago_taxi_gold)
+[0m22:03:48.690363 [debug] [ThreadPool]: Creating schema "database: "chicago_taxi"
+schema: "gold"
+"
+[0m22:03:48.696286 [debug] [ThreadPool]: Using duckdb connection "create_chicago_taxi_gold"
+[0m22:03:48.696605 [debug] [ThreadPool]: On create_chicago_taxi_gold: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "connection_name": "create_chicago_taxi_gold"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='chicago_taxi'
+        and type != 'duckdb'
+    
+  
+[0m22:03:48.696893 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:03:48.697731 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m22:03:48.698989 [debug] [ThreadPool]: Using duckdb connection "create_chicago_taxi_gold"
+[0m22:03:48.699320 [debug] [ThreadPool]: On create_chicago_taxi_gold: BEGIN
+[0m22:03:48.699913 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:03:48.700199 [debug] [ThreadPool]: Using duckdb connection "create_chicago_taxi_gold"
+[0m22:03:48.700488 [debug] [ThreadPool]: On create_chicago_taxi_gold: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "connection_name": "create_chicago_taxi_gold"} */
+
+    
+    
+        create schema if not exists "chicago_taxi"."gold"
+    
+[0m22:03:48.701025 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:03:48.701722 [debug] [ThreadPool]: On create_chicago_taxi_gold: COMMIT
+[0m22:03:48.702021 [debug] [ThreadPool]: Using duckdb connection "create_chicago_taxi_gold"
+[0m22:03:48.702332 [debug] [ThreadPool]: On create_chicago_taxi_gold: COMMIT
+[0m22:03:48.702968 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:03:48.703436 [debug] [ThreadPool]: On create_chicago_taxi_gold: Close
+[0m22:03:48.704762 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_chicago_taxi_gold, now list_chicago_taxi_gold)
+[0m22:03:48.708491 [debug] [ThreadPool]: Using duckdb connection "list_chicago_taxi_gold"
+[0m22:03:48.708796 [debug] [ThreadPool]: On list_chicago_taxi_gold: BEGIN
+[0m22:03:48.709071 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:03:48.709649 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m22:03:48.709936 [debug] [ThreadPool]: Using duckdb connection "list_chicago_taxi_gold"
+[0m22:03:48.710228 [debug] [ThreadPool]: On list_chicago_taxi_gold: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "connection_name": "list_chicago_taxi_gold"} */
+select
+      'chicago_taxi' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'gold'
+    and lower(table_catalog) = 'chicago_taxi'
+  
+[0m22:03:48.712459 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m22:03:48.713446 [debug] [ThreadPool]: On list_chicago_taxi_gold: ROLLBACK
+[0m22:03:48.713876 [debug] [ThreadPool]: On list_chicago_taxi_gold: Close
+[0m22:03:48.714438 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7da21d29-5fea-46bd-aee7-1befdc112e9b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a0ab14ba000>]}
+[0m22:03:48.714863 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:03:48.715192 [debug] [MainThread]: On master: BEGIN
+[0m22:03:48.715580 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:03:48.716497 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m22:03:48.716819 [debug] [MainThread]: On master: COMMIT
+[0m22:03:48.717115 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:03:48.717409 [debug] [MainThread]: On master: COMMIT
+[0m22:03:48.717823 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:03:48.718120 [debug] [MainThread]: On master: Close
+[0m22:03:48.719885 [debug] [Thread-1 (]: Began running node model.chicago_taxi_dbt.dim_location
+[0m22:03:48.720342 [info ] [Thread-1 (]: 1 of 3 START sql table model gold.dim_location ................................. [RUN]
+[0m22:03:48.720992 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_chicago_taxi_gold, now model.chicago_taxi_dbt.dim_location)
+[0m22:03:48.721352 [debug] [Thread-1 (]: Began compiling node model.chicago_taxi_dbt.dim_location
+[0m22:03:48.728640 [debug] [Thread-1 (]: Writing injected SQL for node "model.chicago_taxi_dbt.dim_location"
+[0m22:03:48.729199 [debug] [Thread-1 (]: Began executing node model.chicago_taxi_dbt.dim_location
+[0m22:03:48.777955 [debug] [Thread-1 (]: Writing runtime sql for node "model.chicago_taxi_dbt.dim_location"
+[0m22:03:48.778623 [debug] [Thread-1 (]: Using duckdb connection "model.chicago_taxi_dbt.dim_location"
+[0m22:03:48.779093 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_location: BEGIN
+[0m22:03:48.779466 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:03:48.780169 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:03:48.780553 [debug] [Thread-1 (]: Using duckdb connection "model.chicago_taxi_dbt.dim_location"
+[0m22:03:48.780945 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_location: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "node_id": "model.chicago_taxi_dbt.dim_location"} */
+
+    
+
+    create  table
+      "chicago_taxi"."gold"."dim_location__dbt_tmp"
+  
+    
+    as (
+      with source_data as (
+    select *
+    from read_parquet('/home/mona/PycharmProjects/PythonProject/taxi_data_silver/**/*.parquet')
+)
+
+select distinct
+    md5(cast(coalesce(cast(pickup_community_area as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(pickup_census_tract as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(dropoff_community_area as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(dropoff_census_tract as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as location_key,
+    pickup_community_area,
+    pickup_census_tract,
+    dropoff_community_area,
+    dropoff_census_tract
+from source_data
+    );
+    
+  
+[0m22:03:48.863371 [debug] [Thread-1 (]: SQL status: OK in 0.082 seconds
+[0m22:03:48.868527 [debug] [Thread-1 (]: Using duckdb connection "model.chicago_taxi_dbt.dim_location"
+[0m22:03:48.868956 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_location: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "node_id": "model.chicago_taxi_dbt.dim_location"} */
+alter table "chicago_taxi"."gold"."dim_location__dbt_tmp" rename to "dim_location"
+[0m22:03:48.869907 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:03:48.884511 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_location: COMMIT
+[0m22:03:48.884967 [debug] [Thread-1 (]: Using duckdb connection "model.chicago_taxi_dbt.dim_location"
+[0m22:03:48.885375 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_location: COMMIT
+[0m22:03:48.889239 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m22:03:48.893806 [debug] [Thread-1 (]: Using duckdb connection "model.chicago_taxi_dbt.dim_location"
+[0m22:03:48.894295 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_location: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "node_id": "model.chicago_taxi_dbt.dim_location"} */
+
+      drop table if exists "chicago_taxi"."gold"."dim_location__dbt_backup" cascade
+    
+[0m22:03:48.895057 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m22:03:48.897302 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_location: Close
+[0m22:03:48.898892 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7da21d29-5fea-46bd-aee7-1befdc112e9b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a0a8b1d18b0>]}
+[0m22:03:48.899526 [info ] [Thread-1 (]: 1 of 3 OK created sql table model gold.dim_location ............................ [[32mOK[0m in 0.18s]
+[0m22:03:48.900163 [debug] [Thread-1 (]: Finished running node model.chicago_taxi_dbt.dim_location
+[0m22:03:48.900627 [debug] [Thread-1 (]: Began running node model.chicago_taxi_dbt.dim_trips
+[0m22:03:48.901127 [info ] [Thread-1 (]: 2 of 3 START sql table model gold.dim_trips .................................... [RUN]
+[0m22:03:48.901644 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.chicago_taxi_dbt.dim_location, now model.chicago_taxi_dbt.dim_trips)
+[0m22:03:48.902067 [debug] [Thread-1 (]: Began compiling node model.chicago_taxi_dbt.dim_trips
+[0m22:03:48.904276 [debug] [Thread-1 (]: Writing injected SQL for node "model.chicago_taxi_dbt.dim_trips"
+[0m22:03:48.905045 [debug] [Thread-1 (]: Began executing node model.chicago_taxi_dbt.dim_trips
+[0m22:03:48.908180 [debug] [Thread-1 (]: Writing runtime sql for node "model.chicago_taxi_dbt.dim_trips"
+[0m22:03:48.908862 [debug] [Thread-1 (]: Using duckdb connection "model.chicago_taxi_dbt.dim_trips"
+[0m22:03:48.909281 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_trips: BEGIN
+[0m22:03:48.909667 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:03:48.910405 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:03:48.910804 [debug] [Thread-1 (]: Using duckdb connection "model.chicago_taxi_dbt.dim_trips"
+[0m22:03:48.911204 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_trips: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "node_id": "model.chicago_taxi_dbt.dim_trips"} */
+
+    
+
+    create  table
+      "chicago_taxi"."gold"."dim_trips__dbt_tmp"
+  
+    
+    as (
+      with source_data as (
+    select *
+    from read_parquet('/home/mona/PycharmProjects/PythonProject/taxi_data_silver/**/*.parquet')
+)
+
+select distinct
+    trip_id,
+    taxi_id,
+    payment_type,
+    company
+from source_data
+    );
+    
+  
+[0m22:03:49.744157 [debug] [Thread-1 (]: SQL status: OK in 0.832 seconds
+[0m22:03:49.746178 [debug] [Thread-1 (]: Using duckdb connection "model.chicago_taxi_dbt.dim_trips"
+[0m22:03:49.746545 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_trips: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "node_id": "model.chicago_taxi_dbt.dim_trips"} */
+alter table "chicago_taxi"."gold"."dim_trips__dbt_tmp" rename to "dim_trips"
+[0m22:03:49.747391 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m22:03:49.749049 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_trips: COMMIT
+[0m22:03:49.749439 [debug] [Thread-1 (]: Using duckdb connection "model.chicago_taxi_dbt.dim_trips"
+[0m22:03:49.749780 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_trips: COMMIT
+[0m22:03:49.991054 [debug] [Thread-1 (]: SQL status: OK in 0.241 seconds
+[0m22:03:49.992493 [debug] [Thread-1 (]: Using duckdb connection "model.chicago_taxi_dbt.dim_trips"
+[0m22:03:49.992837 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_trips: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "node_id": "model.chicago_taxi_dbt.dim_trips"} */
+
+      drop table if exists "chicago_taxi"."gold"."dim_trips__dbt_backup" cascade
+    
+[0m22:03:49.993432 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m22:03:49.994503 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.dim_trips: Close
+[0m22:03:49.994987 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7da21d29-5fea-46bd-aee7-1befdc112e9b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a0a8a5040e0>]}
+[0m22:03:49.995502 [info ] [Thread-1 (]: 2 of 3 OK created sql table model gold.dim_trips ............................... [[32mOK[0m in 1.09s]
+[0m22:03:49.996009 [debug] [Thread-1 (]: Finished running node model.chicago_taxi_dbt.dim_trips
+[0m22:03:49.996395 [debug] [Thread-1 (]: Began running node model.chicago_taxi_dbt.fact_trips
+[0m22:03:49.996794 [info ] [Thread-1 (]: 3 of 3 START sql table model gold.fact_trips ................................... [RUN]
+[0m22:03:49.997264 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.chicago_taxi_dbt.dim_trips, now model.chicago_taxi_dbt.fact_trips)
+[0m22:03:49.997600 [debug] [Thread-1 (]: Began compiling node model.chicago_taxi_dbt.fact_trips
+[0m22:03:50.000693 [debug] [Thread-1 (]: Writing injected SQL for node "model.chicago_taxi_dbt.fact_trips"
+[0m22:03:50.001179 [debug] [Thread-1 (]: Began executing node model.chicago_taxi_dbt.fact_trips
+[0m22:03:50.003554 [debug] [Thread-1 (]: Writing runtime sql for node "model.chicago_taxi_dbt.fact_trips"
+[0m22:03:50.004023 [debug] [Thread-1 (]: Using duckdb connection "model.chicago_taxi_dbt.fact_trips"
+[0m22:03:50.004360 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.fact_trips: BEGIN
+[0m22:03:50.004682 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:03:50.005284 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:03:50.005612 [debug] [Thread-1 (]: Using duckdb connection "model.chicago_taxi_dbt.fact_trips"
+[0m22:03:50.005952 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.fact_trips: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "node_id": "model.chicago_taxi_dbt.fact_trips"} */
+
+    
+
+    create  table
+      "chicago_taxi"."gold"."fact_trips__dbt_tmp"
+  
+    
+    as (
+      with source_data as (
+    select *
+    from read_parquet('/home/mona/PycharmProjects/PythonProject/taxi_data_silver/**/*.parquet')
+)
+
+select
+    trip_id,
+    md5(cast(coalesce(cast(pickup_community_area as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(pickup_census_tract as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(dropoff_community_area as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(dropoff_census_tract as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as location_key,
+    trip_start_timestamp,
+    trip_end_timestamp,
+    trip_seconds,
+    trip_miles,
+    fare,
+    tips,
+    tolls,
+    extras,
+    trip_total
+from source_data
+    );
+    
+  
+[0m22:03:50.832968 [debug] [Thread-1 (]: SQL status: OK in 0.827 seconds
+[0m22:03:50.834917 [debug] [Thread-1 (]: Using duckdb connection "model.chicago_taxi_dbt.fact_trips"
+[0m22:03:50.835300 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.fact_trips: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "node_id": "model.chicago_taxi_dbt.fact_trips"} */
+alter table "chicago_taxi"."gold"."fact_trips__dbt_tmp" rename to "fact_trips"
+[0m22:03:50.836239 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m22:03:50.837810 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.fact_trips: COMMIT
+[0m22:03:50.838177 [debug] [Thread-1 (]: Using duckdb connection "model.chicago_taxi_dbt.fact_trips"
+[0m22:03:50.838514 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.fact_trips: COMMIT
+[0m22:03:50.872395 [debug] [Thread-1 (]: SQL status: OK in 0.033 seconds
+[0m22:03:50.874246 [debug] [Thread-1 (]: Using duckdb connection "model.chicago_taxi_dbt.fact_trips"
+[0m22:03:50.874662 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.fact_trips: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "node_id": "model.chicago_taxi_dbt.fact_trips"} */
+
+      drop table if exists "chicago_taxi"."gold"."fact_trips__dbt_backup" cascade
+    
+[0m22:03:50.875370 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m22:03:50.877001 [debug] [Thread-1 (]: On model.chicago_taxi_dbt.fact_trips: Close
+[0m22:03:50.877601 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7da21d29-5fea-46bd-aee7-1befdc112e9b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a0a8a5ae810>]}
+[0m22:03:50.878211 [info ] [Thread-1 (]: 3 of 3 OK created sql table model gold.fact_trips .............................. [[32mOK[0m in 0.88s]
+[0m22:03:50.878829 [debug] [Thread-1 (]: Finished running node model.chicago_taxi_dbt.fact_trips
+[0m22:03:50.879906 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:03:50.880313 [debug] [MainThread]: On master: BEGIN
+[0m22:03:50.880663 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m22:03:50.881299 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m22:03:50.881654 [debug] [MainThread]: On master: COMMIT
+[0m22:03:50.882008 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:03:50.882356 [debug] [MainThread]: On master: COMMIT
+[0m22:03:50.882843 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:03:50.883195 [debug] [MainThread]: On master: Close
+[0m22:03:50.883771 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:03:50.884269 [debug] [MainThread]: Connection 'model.chicago_taxi_dbt.fact_trips' was properly closed.
+[0m22:03:50.884670 [info ] [MainThread]: 
+[0m22:03:50.885052 [info ] [MainThread]: Finished running 3 table models in 0 hours 0 minutes and 2.24 seconds (2.24s).
+[0m22:03:50.886021 [debug] [MainThread]: Command end result
+[0m22:03:50.928392 [debug] [MainThread]: Wrote artifact WritableManifest to /home/mona/PycharmProjects/PythonProject/dbt/target/manifest.json
+[0m22:03:50.930901 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/mona/PycharmProjects/PythonProject/dbt/target/semantic_manifest.json
+[0m22:03:50.933251 [debug] [MainThread]: Wrote artifact OsiDocument to /home/mona/PycharmProjects/PythonProject/dbt/target/osi_document.json
+[0m22:03:50.940040 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/mona/PycharmProjects/PythonProject/dbt/target/run_results.json
+[0m22:03:50.940451 [info ] [MainThread]: 
+[0m22:03:50.940963 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m22:03:50.941351 [info ] [MainThread]: 
+[0m22:03:50.941750 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=3
+[0m22:03:50.942302 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m22:03:50.943191 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 3.582269, "process_in_blocks": "106880", "process_kernel_time": 0.488503, "process_mem_max_rss": "752496", "process_out_blocks": "211168", "process_user_time": 7.473104}
+[0m22:03:50.943753 [debug] [MainThread]: Command `dbt run` succeeded at 22:03:50.943646 after 3.58 seconds
+[0m22:03:50.944171 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a0ab4a479e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a0a8b1f00e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a0ab29ede80>]}
+[0m22:03:50.944602 [debug] [MainThread]: Flushing usage events
+[0m22:03:54.827934 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:04:17.146163 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x742be01699d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x742bddecba40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x742bdf261b20>]}
+
+
+============================== 22:04:17.148793 | 0025cdd3-faab-4ddf-bb60-d48fa198cf04 ==============================
+[0m22:04:17.148793 [info ] [MainThread]: Running with dbt=1.12.4
+[0m22:04:17.149347 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'log_cache_events': 'False', 'profiles_dir': '/home/mona/.dbt', 'empty': 'None', 'partial_parse': 'True', 'log_format': 'default', 'debug': 'False', 'log_path': '/home/mona/PycharmProjects/PythonProject/dbt/logs', 'printer_width': '80', 'no_print': 'None', 'fail_fast': 'False', 'invocation_command': 'dbt test', 'static_parser': 'True', 'quiet': 'False', 'target_path': 'None', 'cache_selected_only': 'False', 'write_json': 'True', 'indirect_selection': 'eager', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'maximum_seed_size_mib': '1', 'hints_enabled': 'True', 'use_experimental_parser': 'False', 'use_colors': 'True', 'introspect': 'True'}
+[0m22:04:17.387749 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '0025cdd3-faab-4ddf-bb60-d48fa198cf04', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x742bdcb84050>]}
+[0m22:04:17.459908 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '0025cdd3-faab-4ddf-bb60-d48fa198cf04', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x742bdca0ddc0>]}
+[0m22:04:17.461717 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m22:04:17.548845 [debug] [MainThread]: checksum: 4b125ace8e4d4b1c5105e1f82b9265449ec04590296dd1ff86d37b8bfa277925, vars: {}, profile: chicago_taxi_dbt, target: dev, version: 1.12.4
+[0m22:04:17.686080 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m22:04:17.686520 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m22:04:17.686855 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m22:04:17.696850 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '0025cdd3-faab-4ddf-bb60-d48fa198cf04', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x742bdcada900>]}
+[0m22:04:17.907257 [debug] [MainThread]: Wrote artifact WritableManifest to /home/mona/PycharmProjects/PythonProject/dbt/target/manifest.json
+[0m22:04:17.909678 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/mona/PycharmProjects/PythonProject/dbt/target/semantic_manifest.json
+[0m22:04:17.922459 [debug] [MainThread]: Wrote artifact OsiDocument to /home/mona/PycharmProjects/PythonProject/dbt/target/osi_document.json
+[0m22:04:17.992775 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '0025cdd3-faab-4ddf-bb60-d48fa198cf04', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x742bd49ffbf0>]}
+[0m22:04:17.993412 [info ] [MainThread]: Found 3 models, 7 data tests, 1 source, 614 macros
+[0m22:04:17.993911 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0025cdd3-faab-4ddf-bb60-d48fa198cf04', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x742bd49e15b0>]}
+[0m22:04:17.996409 [info ] [MainThread]: 
+[0m22:04:17.996851 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m22:04:17.997268 [info ] [MainThread]: 
+[0m22:04:17.997867 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m22:04:18.003101 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_chicago_taxi_gold'
+[0m22:04:18.038181 [debug] [ThreadPool]: Using duckdb connection "list_chicago_taxi_gold"
+[0m22:04:18.038628 [debug] [ThreadPool]: On list_chicago_taxi_gold: BEGIN
+[0m22:04:18.038987 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:04:18.052885 [debug] [ThreadPool]: SQL status: OK in 0.014 seconds
+[0m22:04:18.053397 [debug] [ThreadPool]: Using duckdb connection "list_chicago_taxi_gold"
+[0m22:04:18.053796 [debug] [ThreadPool]: On list_chicago_taxi_gold: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "connection_name": "list_chicago_taxi_gold"} */
+select
+      'chicago_taxi' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'gold'
+    and lower(table_catalog) = 'chicago_taxi'
+  
+[0m22:04:18.057025 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m22:04:18.058397 [debug] [ThreadPool]: On list_chicago_taxi_gold: ROLLBACK
+[0m22:04:18.058934 [debug] [ThreadPool]: On list_chicago_taxi_gold: Close
+[0m22:04:18.060150 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0025cdd3-faab-4ddf-bb60-d48fa198cf04', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x742bdcadbfe0>]}
+[0m22:04:18.060644 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:04:18.061000 [debug] [MainThread]: On master: BEGIN
+[0m22:04:18.061351 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:04:18.061991 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m22:04:18.062493 [debug] [MainThread]: On master: COMMIT
+[0m22:04:18.063052 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:04:18.063644 [debug] [MainThread]: On master: COMMIT
+[0m22:04:18.064738 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:04:18.065261 [debug] [MainThread]: On master: Close
+[0m22:04:18.067825 [debug] [Thread-1 (]: Began running node test.chicago_taxi_dbt.not_null_dim_location_location_key.c1a2c0b86c
+[0m22:04:18.068350 [info ] [Thread-1 (]: 1 of 7 START test not_null_dim_location_location_key ........................... [RUN]
+[0m22:04:18.068901 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_chicago_taxi_gold, now test.chicago_taxi_dbt.not_null_dim_location_location_key.c1a2c0b86c)
+[0m22:04:18.069334 [debug] [Thread-1 (]: Began compiling node test.chicago_taxi_dbt.not_null_dim_location_location_key.c1a2c0b86c
+[0m22:04:18.088745 [debug] [Thread-1 (]: Writing injected SQL for node "test.chicago_taxi_dbt.not_null_dim_location_location_key.c1a2c0b86c"
+[0m22:04:18.089509 [debug] [Thread-1 (]: Began executing node test.chicago_taxi_dbt.not_null_dim_location_location_key.c1a2c0b86c
+[0m22:04:18.107988 [debug] [Thread-1 (]: Writing runtime sql for node "test.chicago_taxi_dbt.not_null_dim_location_location_key.c1a2c0b86c"
+[0m22:04:18.108691 [debug] [Thread-1 (]: Using duckdb connection "test.chicago_taxi_dbt.not_null_dim_location_location_key.c1a2c0b86c"
+[0m22:04:18.109166 [debug] [Thread-1 (]: On test.chicago_taxi_dbt.not_null_dim_location_location_key.c1a2c0b86c: BEGIN
+[0m22:04:18.109588 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:04:18.110364 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:04:18.110771 [debug] [Thread-1 (]: Using duckdb connection "test.chicago_taxi_dbt.not_null_dim_location_location_key.c1a2c0b86c"
+[0m22:04:18.111170 [debug] [Thread-1 (]: On test.chicago_taxi_dbt.not_null_dim_location_location_key.c1a2c0b86c: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "node_id": "test.chicago_taxi_dbt.not_null_dim_location_location_key.c1a2c0b86c"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select location_key
+from "chicago_taxi"."gold"."dim_location"
+where location_key is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:04:18.120131 [debug] [Thread-1 (]: SQL status: OK in 0.008 seconds
+[0m22:04:18.124356 [debug] [Thread-1 (]: On test.chicago_taxi_dbt.not_null_dim_location_location_key.c1a2c0b86c: ROLLBACK
+[0m22:04:18.124983 [debug] [Thread-1 (]: On test.chicago_taxi_dbt.not_null_dim_location_location_key.c1a2c0b86c: Close
+[0m22:04:18.125650 [info ] [Thread-1 (]: 1 of 7 PASS not_null_dim_location_location_key ................................. [[32mPASS[0m in 0.06s]
+[0m22:04:18.126309 [debug] [Thread-1 (]: Finished running node test.chicago_taxi_dbt.not_null_dim_location_location_key.c1a2c0b86c
+[0m22:04:18.126777 [debug] [Thread-1 (]: Began running node test.chicago_taxi_dbt.not_null_dim_trips_trip_id.3ab7bf8053
+[0m22:04:18.127207 [info ] [Thread-1 (]: 2 of 7 START test not_null_dim_trips_trip_id ................................... [RUN]
+[0m22:04:18.127861 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.chicago_taxi_dbt.not_null_dim_location_location_key.c1a2c0b86c, now test.chicago_taxi_dbt.not_null_dim_trips_trip_id.3ab7bf8053)
+[0m22:04:18.128312 [debug] [Thread-1 (]: Began compiling node test.chicago_taxi_dbt.not_null_dim_trips_trip_id.3ab7bf8053
+[0m22:04:18.135434 [debug] [Thread-1 (]: Writing injected SQL for node "test.chicago_taxi_dbt.not_null_dim_trips_trip_id.3ab7bf8053"
+[0m22:04:18.136033 [debug] [Thread-1 (]: Began executing node test.chicago_taxi_dbt.not_null_dim_trips_trip_id.3ab7bf8053
+[0m22:04:18.137772 [debug] [Thread-1 (]: Writing runtime sql for node "test.chicago_taxi_dbt.not_null_dim_trips_trip_id.3ab7bf8053"
+[0m22:04:18.138326 [debug] [Thread-1 (]: Using duckdb connection "test.chicago_taxi_dbt.not_null_dim_trips_trip_id.3ab7bf8053"
+[0m22:04:18.138733 [debug] [Thread-1 (]: On test.chicago_taxi_dbt.not_null_dim_trips_trip_id.3ab7bf8053: BEGIN
+[0m22:04:18.139123 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:04:18.139873 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:04:18.140337 [debug] [Thread-1 (]: Using duckdb connection "test.chicago_taxi_dbt.not_null_dim_trips_trip_id.3ab7bf8053"
+[0m22:04:18.140745 [debug] [Thread-1 (]: On test.chicago_taxi_dbt.not_null_dim_trips_trip_id.3ab7bf8053: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "node_id": "test.chicago_taxi_dbt.not_null_dim_trips_trip_id.3ab7bf8053"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select trip_id
+from "chicago_taxi"."gold"."dim_trips"
+where trip_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:04:18.141823 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:04:18.143261 [debug] [Thread-1 (]: On test.chicago_taxi_dbt.not_null_dim_trips_trip_id.3ab7bf8053: ROLLBACK
+[0m22:04:18.143860 [debug] [Thread-1 (]: On test.chicago_taxi_dbt.not_null_dim_trips_trip_id.3ab7bf8053: Close
+[0m22:04:18.144501 [info ] [Thread-1 (]: 2 of 7 PASS not_null_dim_trips_trip_id ......................................... [[32mPASS[0m in 0.02s]
+[0m22:04:18.145132 [debug] [Thread-1 (]: Finished running node test.chicago_taxi_dbt.not_null_dim_trips_trip_id.3ab7bf8053
+[0m22:04:18.145728 [debug] [Thread-1 (]: Began running node test.chicago_taxi_dbt.not_null_fact_trips_trip_id.6b89049442
+[0m22:04:18.146262 [info ] [Thread-1 (]: 3 of 7 START test not_null_fact_trips_trip_id .................................. [RUN]
+[0m22:04:18.146828 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.chicago_taxi_dbt.not_null_dim_trips_trip_id.3ab7bf8053, now test.chicago_taxi_dbt.not_null_fact_trips_trip_id.6b89049442)
+[0m22:04:18.147335 [debug] [Thread-1 (]: Began compiling node test.chicago_taxi_dbt.not_null_fact_trips_trip_id.6b89049442
+[0m22:04:18.155250 [debug] [Thread-1 (]: Writing injected SQL for node "test.chicago_taxi_dbt.not_null_fact_trips_trip_id.6b89049442"
+[0m22:04:18.155865 [debug] [Thread-1 (]: Began executing node test.chicago_taxi_dbt.not_null_fact_trips_trip_id.6b89049442
+[0m22:04:18.157926 [debug] [Thread-1 (]: Writing runtime sql for node "test.chicago_taxi_dbt.not_null_fact_trips_trip_id.6b89049442"
+[0m22:04:18.158510 [debug] [Thread-1 (]: Using duckdb connection "test.chicago_taxi_dbt.not_null_fact_trips_trip_id.6b89049442"
+[0m22:04:18.158926 [debug] [Thread-1 (]: On test.chicago_taxi_dbt.not_null_fact_trips_trip_id.6b89049442: BEGIN
+[0m22:04:18.159329 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:04:18.160044 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:04:18.160463 [debug] [Thread-1 (]: Using duckdb connection "test.chicago_taxi_dbt.not_null_fact_trips_trip_id.6b89049442"
+[0m22:04:18.160874 [debug] [Thread-1 (]: On test.chicago_taxi_dbt.not_null_fact_trips_trip_id.6b89049442: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "node_id": "test.chicago_taxi_dbt.not_null_fact_trips_trip_id.6b89049442"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select trip_id
+from "chicago_taxi"."gold"."fact_trips"
+where trip_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:04:18.161942 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:04:18.163633 [debug] [Thread-1 (]: On test.chicago_taxi_dbt.not_null_fact_trips_trip_id.6b89049442: ROLLBACK
+[0m22:04:18.164368 [debug] [Thread-1 (]: On test.chicago_taxi_dbt.not_null_fact_trips_trip_id.6b89049442: Close
+[0m22:04:18.165081 [info ] [Thread-1 (]: 3 of 7 PASS not_null_fact_trips_trip_id ........................................ [[32mPASS[0m in 0.02s]
+[0m22:04:18.165749 [debug] [Thread-1 (]: Finished running node test.chicago_taxi_dbt.not_null_fact_trips_trip_id.6b89049442
+[0m22:04:18.166289 [debug] [Thread-1 (]: Began running node test.chicago_taxi_dbt.relationships_fact_trips_location_key__location_key__ref_dim_location_.8cc287ad61
+[0m22:04:18.166725 [info ] [Thread-1 (]: 4 of 7 START test relationships_fact_trips_location_key__location_key__ref_dim_location_  [RUN]
+[0m22:04:18.167404 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.chicago_taxi_dbt.not_null_fact_trips_trip_id.6b89049442, now test.chicago_taxi_dbt.relationships_fact_trips_location_key__location_key__ref_dim_location_.8cc287ad61)
+[0m22:04:18.167855 [debug] [Thread-1 (]: Began compiling node test.chicago_taxi_dbt.relationships_fact_trips_location_key__location_key__ref_dim_location_.8cc287ad61
+[0m22:04:18.186933 [debug] [Thread-1 (]: Writing injected SQL for node "test.chicago_taxi_dbt.relationships_fact_trips_location_key__location_key__ref_dim_location_.8cc287ad61"
+[0m22:04:18.187552 [debug] [Thread-1 (]: Began executing node test.chicago_taxi_dbt.relationships_fact_trips_location_key__location_key__ref_dim_location_.8cc287ad61
+[0m22:04:18.189328 [debug] [Thread-1 (]: Writing runtime sql for node "test.chicago_taxi_dbt.relationships_fact_trips_location_key__location_key__ref_dim_location_.8cc287ad61"
+[0m22:04:18.189890 [debug] [Thread-1 (]: Using duckdb connection "test.chicago_taxi_dbt.relationships_fact_trips_location_key__location_key__ref_dim_location_.8cc287ad61"
+[0m22:04:18.190316 [debug] [Thread-1 (]: On test.chicago_taxi_dbt.relationships_fact_trips_location_key__location_key__ref_dim_location_.8cc287ad61: BEGIN
+[0m22:04:18.190720 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:04:18.191447 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:04:18.192016 [debug] [Thread-1 (]: Using duckdb connection "test.chicago_taxi_dbt.relationships_fact_trips_location_key__location_key__ref_dim_location_.8cc287ad61"
+[0m22:04:18.192464 [debug] [Thread-1 (]: On test.chicago_taxi_dbt.relationships_fact_trips_location_key__location_key__ref_dim_location_.8cc287ad61: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "node_id": "test.chicago_taxi_dbt.relationships_fact_trips_location_key__location_key__ref_dim_location_.8cc287ad61"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with child as (
+    select location_key as from_field
+    from "chicago_taxi"."gold"."fact_trips"
+    where location_key is not null
+),
+
+parent as (
+    select location_key as to_field
+    from "chicago_taxi"."gold"."dim_location"
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:04:18.204085 [debug] [Thread-1 (]: SQL status: OK in 0.011 seconds
+[0m22:04:18.205686 [debug] [Thread-1 (]: On test.chicago_taxi_dbt.relationships_fact_trips_location_key__location_key__ref_dim_location_.8cc287ad61: ROLLBACK
+[0m22:04:18.206353 [debug] [Thread-1 (]: On test.chicago_taxi_dbt.relationships_fact_trips_location_key__location_key__ref_dim_location_.8cc287ad61: Close
+[0m22:04:18.207009 [info ] [Thread-1 (]: 4 of 7 PASS relationships_fact_trips_location_key__location_key__ref_dim_location_  [[32mPASS[0m in 0.04s]
+[0m22:04:18.207656 [debug] [Thread-1 (]: Finished running node test.chicago_taxi_dbt.relationships_fact_trips_location_key__location_key__ref_dim_location_.8cc287ad61
+[0m22:04:18.208107 [debug] [Thread-1 (]: Began running node test.chicago_taxi_dbt.unique_dim_location_location_key.b5757d64b6
+[0m22:04:18.208535 [info ] [Thread-1 (]: 5 of 7 START test unique_dim_location_location_key ............................. [RUN]
+[0m22:04:18.209072 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.chicago_taxi_dbt.relationships_fact_trips_location_key__location_key__ref_dim_location_.8cc287ad61, now test.chicago_taxi_dbt.unique_dim_location_location_key.b5757d64b6)
+[0m22:04:18.209511 [debug] [Thread-1 (]: Began compiling node test.chicago_taxi_dbt.unique_dim_location_location_key.b5757d64b6
+[0m22:04:18.218529 [debug] [Thread-1 (]: Writing injected SQL for node "test.chicago_taxi_dbt.unique_dim_location_location_key.b5757d64b6"
+[0m22:04:18.219130 [debug] [Thread-1 (]: Began executing node test.chicago_taxi_dbt.unique_dim_location_location_key.b5757d64b6
+[0m22:04:18.220837 [debug] [Thread-1 (]: Writing runtime sql for node "test.chicago_taxi_dbt.unique_dim_location_location_key.b5757d64b6"
+[0m22:04:18.221391 [debug] [Thread-1 (]: Using duckdb connection "test.chicago_taxi_dbt.unique_dim_location_location_key.b5757d64b6"
+[0m22:04:18.221801 [debug] [Thread-1 (]: On test.chicago_taxi_dbt.unique_dim_location_location_key.b5757d64b6: BEGIN
+[0m22:04:18.222191 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:04:18.222898 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:04:18.223313 [debug] [Thread-1 (]: Using duckdb connection "test.chicago_taxi_dbt.unique_dim_location_location_key.b5757d64b6"
+[0m22:04:18.223725 [debug] [Thread-1 (]: On test.chicago_taxi_dbt.unique_dim_location_location_key.b5757d64b6: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "node_id": "test.chicago_taxi_dbt.unique_dim_location_location_key.b5757d64b6"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    location_key as unique_field,
+    count(*) as n_records
+
+from "chicago_taxi"."gold"."dim_location"
+where location_key is not null
+group by location_key
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:04:18.226645 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m22:04:18.228167 [debug] [Thread-1 (]: On test.chicago_taxi_dbt.unique_dim_location_location_key.b5757d64b6: ROLLBACK
+[0m22:04:18.228811 [debug] [Thread-1 (]: On test.chicago_taxi_dbt.unique_dim_location_location_key.b5757d64b6: Close
+[0m22:04:18.229490 [info ] [Thread-1 (]: 5 of 7 PASS unique_dim_location_location_key ................................... [[32mPASS[0m in 0.02s]
+[0m22:04:18.230250 [debug] [Thread-1 (]: Finished running node test.chicago_taxi_dbt.unique_dim_location_location_key.b5757d64b6
+[0m22:04:18.230746 [debug] [Thread-1 (]: Began running node test.chicago_taxi_dbt.unique_dim_trips_trip_id.d118adca02
+[0m22:04:18.231189 [info ] [Thread-1 (]: 6 of 7 START test unique_dim_trips_trip_id ..................................... [RUN]
+[0m22:04:18.231918 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.chicago_taxi_dbt.unique_dim_location_location_key.b5757d64b6, now test.chicago_taxi_dbt.unique_dim_trips_trip_id.d118adca02)
+[0m22:04:18.232406 [debug] [Thread-1 (]: Began compiling node test.chicago_taxi_dbt.unique_dim_trips_trip_id.d118adca02
+[0m22:04:18.239360 [debug] [Thread-1 (]: Writing injected SQL for node "test.chicago_taxi_dbt.unique_dim_trips_trip_id.d118adca02"
+[0m22:04:18.239954 [debug] [Thread-1 (]: Began executing node test.chicago_taxi_dbt.unique_dim_trips_trip_id.d118adca02
+[0m22:04:18.241650 [debug] [Thread-1 (]: Writing runtime sql for node "test.chicago_taxi_dbt.unique_dim_trips_trip_id.d118adca02"
+[0m22:04:18.242196 [debug] [Thread-1 (]: Using duckdb connection "test.chicago_taxi_dbt.unique_dim_trips_trip_id.d118adca02"
+[0m22:04:18.242615 [debug] [Thread-1 (]: On test.chicago_taxi_dbt.unique_dim_trips_trip_id.d118adca02: BEGIN
+[0m22:04:18.243006 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:04:18.243730 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:04:18.244137 [debug] [Thread-1 (]: Using duckdb connection "test.chicago_taxi_dbt.unique_dim_trips_trip_id.d118adca02"
+[0m22:04:18.244604 [debug] [Thread-1 (]: On test.chicago_taxi_dbt.unique_dim_trips_trip_id.d118adca02: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "node_id": "test.chicago_taxi_dbt.unique_dim_trips_trip_id.d118adca02"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    trip_id as unique_field,
+    count(*) as n_records
+
+from "chicago_taxi"."gold"."dim_trips"
+where trip_id is not null
+group by trip_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:04:18.306593 [debug] [Thread-1 (]: SQL status: OK in 0.061 seconds
+[0m22:04:18.308329 [debug] [Thread-1 (]: On test.chicago_taxi_dbt.unique_dim_trips_trip_id.d118adca02: ROLLBACK
+[0m22:04:18.309000 [debug] [Thread-1 (]: On test.chicago_taxi_dbt.unique_dim_trips_trip_id.d118adca02: Close
+[0m22:04:18.309689 [info ] [Thread-1 (]: 6 of 7 PASS unique_dim_trips_trip_id ........................................... [[32mPASS[0m in 0.08s]
+[0m22:04:18.310394 [debug] [Thread-1 (]: Finished running node test.chicago_taxi_dbt.unique_dim_trips_trip_id.d118adca02
+[0m22:04:18.310880 [debug] [Thread-1 (]: Began running node test.chicago_taxi_dbt.unique_fact_trips_trip_id.689f42211e
+[0m22:04:18.311390 [info ] [Thread-1 (]: 7 of 7 START test unique_fact_trips_trip_id .................................... [RUN]
+[0m22:04:18.311947 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.chicago_taxi_dbt.unique_dim_trips_trip_id.d118adca02, now test.chicago_taxi_dbt.unique_fact_trips_trip_id.689f42211e)
+[0m22:04:18.312408 [debug] [Thread-1 (]: Began compiling node test.chicago_taxi_dbt.unique_fact_trips_trip_id.689f42211e
+[0m22:04:18.323386 [debug] [Thread-1 (]: Writing injected SQL for node "test.chicago_taxi_dbt.unique_fact_trips_trip_id.689f42211e"
+[0m22:04:18.324071 [debug] [Thread-1 (]: Began executing node test.chicago_taxi_dbt.unique_fact_trips_trip_id.689f42211e
+[0m22:04:18.325860 [debug] [Thread-1 (]: Writing runtime sql for node "test.chicago_taxi_dbt.unique_fact_trips_trip_id.689f42211e"
+[0m22:04:18.326459 [debug] [Thread-1 (]: Using duckdb connection "test.chicago_taxi_dbt.unique_fact_trips_trip_id.689f42211e"
+[0m22:04:18.326904 [debug] [Thread-1 (]: On test.chicago_taxi_dbt.unique_fact_trips_trip_id.689f42211e: BEGIN
+[0m22:04:18.327320 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:04:18.328044 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:04:18.328479 [debug] [Thread-1 (]: Using duckdb connection "test.chicago_taxi_dbt.unique_fact_trips_trip_id.689f42211e"
+[0m22:04:18.328910 [debug] [Thread-1 (]: On test.chicago_taxi_dbt.unique_fact_trips_trip_id.689f42211e: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "node_id": "test.chicago_taxi_dbt.unique_fact_trips_trip_id.689f42211e"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    trip_id as unique_field,
+    count(*) as n_records
+
+from "chicago_taxi"."gold"."fact_trips"
+where trip_id is not null
+group by trip_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:04:18.382383 [debug] [Thread-1 (]: SQL status: OK in 0.053 seconds
+[0m22:04:18.384347 [debug] [Thread-1 (]: On test.chicago_taxi_dbt.unique_fact_trips_trip_id.689f42211e: ROLLBACK
+[0m22:04:18.385135 [debug] [Thread-1 (]: On test.chicago_taxi_dbt.unique_fact_trips_trip_id.689f42211e: Close
+[0m22:04:18.385955 [info ] [Thread-1 (]: 7 of 7 PASS unique_fact_trips_trip_id .......................................... [[32mPASS[0m in 0.07s]
+[0m22:04:18.386724 [debug] [Thread-1 (]: Finished running node test.chicago_taxi_dbt.unique_fact_trips_trip_id.689f42211e
+[0m22:04:18.388110 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:04:18.388570 [debug] [MainThread]: On master: BEGIN
+[0m22:04:18.388978 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m22:04:18.389693 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m22:04:18.390135 [debug] [MainThread]: On master: COMMIT
+[0m22:04:18.390557 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:04:18.390955 [debug] [MainThread]: On master: COMMIT
+[0m22:04:18.391532 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:04:18.391947 [debug] [MainThread]: On master: Close
+[0m22:04:18.392478 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:04:18.392871 [debug] [MainThread]: Connection 'test.chicago_taxi_dbt.unique_fact_trips_trip_id.689f42211e' was properly closed.
+[0m22:04:18.393298 [info ] [MainThread]: 
+[0m22:04:18.393737 [info ] [MainThread]: Finished running 7 data tests in 0 hours 0 minutes and 0.40 seconds (0.40s).
+[0m22:04:18.395571 [debug] [MainThread]: Command end result
+[0m22:04:18.438427 [debug] [MainThread]: Wrote artifact WritableManifest to /home/mona/PycharmProjects/PythonProject/dbt/target/manifest.json
+[0m22:04:18.441006 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/mona/PycharmProjects/PythonProject/dbt/target/semantic_manifest.json
+[0m22:04:18.443739 [debug] [MainThread]: Wrote artifact OsiDocument to /home/mona/PycharmProjects/PythonProject/dbt/target/osi_document.json
+[0m22:04:18.452498 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/mona/PycharmProjects/PythonProject/dbt/target/run_results.json
+[0m22:04:18.452915 [info ] [MainThread]: 
+[0m22:04:18.453348 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m22:04:18.453728 [info ] [MainThread]: 
+[0m22:04:18.454135 [info ] [MainThread]: Done. PASS=7 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=7
+[0m22:04:18.455240 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 1.3916278, "process_in_blocks": "1616", "process_kernel_time": 0.259195, "process_mem_max_rss": "358992", "process_out_blocks": "3304", "process_user_time": 3.222003}
+[0m22:04:18.456068 [debug] [MainThread]: Command `dbt test` succeeded at 22:04:18.455917 after 1.39 seconds
+[0m22:04:18.456701 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x742bdcd35130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x742bddf71d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x742bddefe3c0>]}
+[0m22:04:18.457360 [debug] [MainThread]: Flushing usage events
+[0m22:04:20.521308 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:06:00.054837 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75f040150860>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75f03e8a0cb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75f03cdd1820>]}
+
+
+============================== 22:06:00.057322 | da14d33b-af43-4246-b5a8-f2292e84ba82 ==============================
+[0m22:06:00.057322 [info ] [MainThread]: Running with dbt=1.12.4
+[0m22:06:00.057798 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'static_parser': 'True', 'hints_enabled': 'True', 'no_print': 'None', 'version_check': 'True', 'fail_fast': 'False', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'invocation_command': 'dbt docs generate', 'introspect': 'True', 'cache_selected_only': 'False', 'write_json': 'True', 'profiles_dir': '/home/mona/.dbt', 'partial_parse': 'True', 'use_colors': 'True', 'maximum_seed_size_mib': '1', 'empty': 'None', 'log_path': '/home/mona/PycharmProjects/PythonProject/dbt/logs', 'debug': 'False', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'printer_width': '80', 'log_format': 'default', 'log_cache_events': 'False'}
+[0m22:06:00.266656 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'da14d33b-af43-4246-b5a8-f2292e84ba82', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75f03c146f00>]}
+[0m22:06:00.329698 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'da14d33b-af43-4246-b5a8-f2292e84ba82', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75f03c313fe0>]}
+[0m22:06:00.331229 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m22:06:00.412297 [debug] [MainThread]: checksum: 4b125ace8e4d4b1c5105e1f82b9265449ec04590296dd1ff86d37b8bfa277925, vars: {}, profile: chicago_taxi_dbt, target: dev, version: 1.12.4
+[0m22:06:00.534161 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m22:06:00.534531 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m22:06:00.534813 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m22:06:00.543493 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'da14d33b-af43-4246-b5a8-f2292e84ba82', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75f03c0104a0>]}
+[0m22:06:00.709511 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'da14d33b-af43-4246-b5a8-f2292e84ba82', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75f033ef3710>]}
+[0m22:06:00.710175 [info ] [MainThread]: Found 3 models, 7 data tests, 1 source, 614 macros
+[0m22:06:00.710700 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'da14d33b-af43-4246-b5a8-f2292e84ba82', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75f03414d4c0>]}
+[0m22:06:00.713242 [info ] [MainThread]: 
+[0m22:06:00.713738 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m22:06:00.714188 [info ] [MainThread]: 
+[0m22:06:00.714874 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m22:06:00.720415 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_chicago_taxi_gold'
+[0m22:06:00.761223 [debug] [ThreadPool]: Using duckdb connection "list_chicago_taxi_gold"
+[0m22:06:00.761714 [debug] [ThreadPool]: On list_chicago_taxi_gold: BEGIN
+[0m22:06:00.762083 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:06:00.774807 [debug] [ThreadPool]: SQL status: OK in 0.013 seconds
+[0m22:06:00.775257 [debug] [ThreadPool]: Using duckdb connection "list_chicago_taxi_gold"
+[0m22:06:00.775629 [debug] [ThreadPool]: On list_chicago_taxi_gold: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "connection_name": "list_chicago_taxi_gold"} */
+select
+      'chicago_taxi' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'gold'
+    and lower(table_catalog) = 'chicago_taxi'
+  
+[0m22:06:00.778981 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m22:06:00.780397 [debug] [ThreadPool]: On list_chicago_taxi_gold: ROLLBACK
+[0m22:06:00.780972 [debug] [ThreadPool]: On list_chicago_taxi_gold: Close
+[0m22:06:00.782502 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'da14d33b-af43-4246-b5a8-f2292e84ba82', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75f033ef3650>]}
+[0m22:06:00.784661 [debug] [Thread-1 (]: Began running node model.chicago_taxi_dbt.dim_location
+[0m22:06:00.785253 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_chicago_taxi_gold, now model.chicago_taxi_dbt.dim_location)
+[0m22:06:00.785680 [debug] [Thread-1 (]: Began compiling node model.chicago_taxi_dbt.dim_location
+[0m22:06:00.804570 [debug] [Thread-1 (]: Writing injected SQL for node "model.chicago_taxi_dbt.dim_location"
+[0m22:06:00.805250 [debug] [Thread-1 (]: Began executing node model.chicago_taxi_dbt.dim_location
+[0m22:06:00.806011 [debug] [Thread-1 (]: Finished running node model.chicago_taxi_dbt.dim_location
+[0m22:06:00.806471 [debug] [Thread-1 (]: Began running node model.chicago_taxi_dbt.dim_trips
+[0m22:06:00.806923 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.chicago_taxi_dbt.dim_location, now model.chicago_taxi_dbt.dim_trips)
+[0m22:06:00.807533 [debug] [Thread-1 (]: Began compiling node model.chicago_taxi_dbt.dim_trips
+[0m22:06:00.808477 [debug] [Thread-1 (]: Writing injected SQL for node "model.chicago_taxi_dbt.dim_trips"
+[0m22:06:00.809033 [debug] [Thread-1 (]: Began executing node model.chicago_taxi_dbt.dim_trips
+[0m22:06:00.809757 [debug] [Thread-1 (]: Finished running node model.chicago_taxi_dbt.dim_trips
+[0m22:06:00.810188 [debug] [Thread-1 (]: Began running node model.chicago_taxi_dbt.fact_trips
+[0m22:06:00.810630 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.chicago_taxi_dbt.dim_trips, now model.chicago_taxi_dbt.fact_trips)
+[0m22:06:00.811031 [debug] [Thread-1 (]: Began compiling node model.chicago_taxi_dbt.fact_trips
+[0m22:06:00.814911 [debug] [Thread-1 (]: Writing injected SQL for node "model.chicago_taxi_dbt.fact_trips"
+[0m22:06:00.815712 [debug] [Thread-1 (]: Began executing node model.chicago_taxi_dbt.fact_trips
+[0m22:06:00.816460 [debug] [Thread-1 (]: Finished running node model.chicago_taxi_dbt.fact_trips
+[0m22:06:00.816901 [debug] [Thread-1 (]: Began running node test.chicago_taxi_dbt.not_null_dim_location_location_key.c1a2c0b86c
+[0m22:06:00.817485 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.chicago_taxi_dbt.fact_trips, now test.chicago_taxi_dbt.not_null_dim_location_location_key.c1a2c0b86c)
+[0m22:06:00.817894 [debug] [Thread-1 (]: Began compiling node test.chicago_taxi_dbt.not_null_dim_location_location_key.c1a2c0b86c
+[0m22:06:00.832754 [debug] [Thread-1 (]: Writing injected SQL for node "test.chicago_taxi_dbt.not_null_dim_location_location_key.c1a2c0b86c"
+[0m22:06:00.833419 [debug] [Thread-1 (]: Began executing node test.chicago_taxi_dbt.not_null_dim_location_location_key.c1a2c0b86c
+[0m22:06:00.834159 [debug] [Thread-1 (]: Finished running node test.chicago_taxi_dbt.not_null_dim_location_location_key.c1a2c0b86c
+[0m22:06:00.834614 [debug] [Thread-1 (]: Began running node test.chicago_taxi_dbt.unique_dim_location_location_key.b5757d64b6
+[0m22:06:00.835071 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.chicago_taxi_dbt.not_null_dim_location_location_key.c1a2c0b86c, now test.chicago_taxi_dbt.unique_dim_location_location_key.b5757d64b6)
+[0m22:06:00.835485 [debug] [Thread-1 (]: Began compiling node test.chicago_taxi_dbt.unique_dim_location_location_key.b5757d64b6
+[0m22:06:00.843991 [debug] [Thread-1 (]: Writing injected SQL for node "test.chicago_taxi_dbt.unique_dim_location_location_key.b5757d64b6"
+[0m22:06:00.844637 [debug] [Thread-1 (]: Began executing node test.chicago_taxi_dbt.unique_dim_location_location_key.b5757d64b6
+[0m22:06:00.845381 [debug] [Thread-1 (]: Finished running node test.chicago_taxi_dbt.unique_dim_location_location_key.b5757d64b6
+[0m22:06:00.845829 [debug] [Thread-1 (]: Began running node test.chicago_taxi_dbt.not_null_dim_trips_trip_id.3ab7bf8053
+[0m22:06:00.846277 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.chicago_taxi_dbt.unique_dim_location_location_key.b5757d64b6, now test.chicago_taxi_dbt.not_null_dim_trips_trip_id.3ab7bf8053)
+[0m22:06:00.846688 [debug] [Thread-1 (]: Began compiling node test.chicago_taxi_dbt.not_null_dim_trips_trip_id.3ab7bf8053
+[0m22:06:00.852765 [debug] [Thread-1 (]: Writing injected SQL for node "test.chicago_taxi_dbt.not_null_dim_trips_trip_id.3ab7bf8053"
+[0m22:06:00.853349 [debug] [Thread-1 (]: Began executing node test.chicago_taxi_dbt.not_null_dim_trips_trip_id.3ab7bf8053
+[0m22:06:00.854060 [debug] [Thread-1 (]: Finished running node test.chicago_taxi_dbt.not_null_dim_trips_trip_id.3ab7bf8053
+[0m22:06:00.854498 [debug] [Thread-1 (]: Began running node test.chicago_taxi_dbt.unique_dim_trips_trip_id.d118adca02
+[0m22:06:00.854939 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.chicago_taxi_dbt.not_null_dim_trips_trip_id.3ab7bf8053, now test.chicago_taxi_dbt.unique_dim_trips_trip_id.d118adca02)
+[0m22:06:00.855416 [debug] [Thread-1 (]: Began compiling node test.chicago_taxi_dbt.unique_dim_trips_trip_id.d118adca02
+[0m22:06:00.861881 [debug] [Thread-1 (]: Writing injected SQL for node "test.chicago_taxi_dbt.unique_dim_trips_trip_id.d118adca02"
+[0m22:06:00.862550 [debug] [Thread-1 (]: Began executing node test.chicago_taxi_dbt.unique_dim_trips_trip_id.d118adca02
+[0m22:06:00.863288 [debug] [Thread-1 (]: Finished running node test.chicago_taxi_dbt.unique_dim_trips_trip_id.d118adca02
+[0m22:06:00.863774 [debug] [Thread-1 (]: Began running node test.chicago_taxi_dbt.not_null_fact_trips_trip_id.6b89049442
+[0m22:06:00.864284 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.chicago_taxi_dbt.unique_dim_trips_trip_id.d118adca02, now test.chicago_taxi_dbt.not_null_fact_trips_trip_id.6b89049442)
+[0m22:06:00.864714 [debug] [Thread-1 (]: Began compiling node test.chicago_taxi_dbt.not_null_fact_trips_trip_id.6b89049442
+[0m22:06:00.870853 [debug] [Thread-1 (]: Writing injected SQL for node "test.chicago_taxi_dbt.not_null_fact_trips_trip_id.6b89049442"
+[0m22:06:00.871462 [debug] [Thread-1 (]: Began executing node test.chicago_taxi_dbt.not_null_fact_trips_trip_id.6b89049442
+[0m22:06:00.872177 [debug] [Thread-1 (]: Finished running node test.chicago_taxi_dbt.not_null_fact_trips_trip_id.6b89049442
+[0m22:06:00.872622 [debug] [Thread-1 (]: Began running node test.chicago_taxi_dbt.relationships_fact_trips_location_key__location_key__ref_dim_location_.8cc287ad61
+[0m22:06:00.873068 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.chicago_taxi_dbt.not_null_fact_trips_trip_id.6b89049442, now test.chicago_taxi_dbt.relationships_fact_trips_location_key__location_key__ref_dim_location_.8cc287ad61)
+[0m22:06:00.873550 [debug] [Thread-1 (]: Began compiling node test.chicago_taxi_dbt.relationships_fact_trips_location_key__location_key__ref_dim_location_.8cc287ad61
+[0m22:06:00.889354 [debug] [Thread-1 (]: Writing injected SQL for node "test.chicago_taxi_dbt.relationships_fact_trips_location_key__location_key__ref_dim_location_.8cc287ad61"
+[0m22:06:00.889970 [debug] [Thread-1 (]: Began executing node test.chicago_taxi_dbt.relationships_fact_trips_location_key__location_key__ref_dim_location_.8cc287ad61
+[0m22:06:00.890685 [debug] [Thread-1 (]: Finished running node test.chicago_taxi_dbt.relationships_fact_trips_location_key__location_key__ref_dim_location_.8cc287ad61
+[0m22:06:00.891104 [debug] [Thread-1 (]: Began running node test.chicago_taxi_dbt.unique_fact_trips_trip_id.689f42211e
+[0m22:06:00.891534 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.chicago_taxi_dbt.relationships_fact_trips_location_key__location_key__ref_dim_location_.8cc287ad61, now test.chicago_taxi_dbt.unique_fact_trips_trip_id.689f42211e)
+[0m22:06:00.891976 [debug] [Thread-1 (]: Began compiling node test.chicago_taxi_dbt.unique_fact_trips_trip_id.689f42211e
+[0m22:06:00.897684 [debug] [Thread-1 (]: Writing injected SQL for node "test.chicago_taxi_dbt.unique_fact_trips_trip_id.689f42211e"
+[0m22:06:00.898195 [debug] [Thread-1 (]: Began executing node test.chicago_taxi_dbt.unique_fact_trips_trip_id.689f42211e
+[0m22:06:00.898846 [debug] [Thread-1 (]: Finished running node test.chicago_taxi_dbt.unique_fact_trips_trip_id.689f42211e
+[0m22:06:00.899768 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:06:00.900088 [debug] [MainThread]: Connection 'test.chicago_taxi_dbt.unique_fact_trips_trip_id.689f42211e' was properly closed.
+[0m22:06:00.901803 [debug] [MainThread]: Command end result
+[0m22:06:01.007438 [debug] [MainThread]: Wrote artifact WritableManifest to /home/mona/PycharmProjects/PythonProject/dbt/target/manifest.json
+[0m22:06:01.009866 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/mona/PycharmProjects/PythonProject/dbt/target/semantic_manifest.json
+[0m22:06:01.022800 [debug] [MainThread]: Wrote artifact OsiDocument to /home/mona/PycharmProjects/PythonProject/dbt/target/osi_document.json
+[0m22:06:01.030455 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/mona/PycharmProjects/PythonProject/dbt/target/run_results.json
+[0m22:06:01.034329 [debug] [MainThread]: Acquiring new duckdb connection 'generate_catalog'
+[0m22:06:01.034674 [info ] [MainThread]: Building catalog
+[0m22:06:01.043314 [debug] [ThreadPool]: Acquiring new duckdb connection 'chicago_taxi.information_schema'
+[0m22:06:01.055899 [debug] [ThreadPool]: Using duckdb connection "chicago_taxi.information_schema"
+[0m22:06:01.056420 [debug] [ThreadPool]: On chicago_taxi.information_schema: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "chicago_taxi_dbt", "target_name": "dev", "connection_name": "chicago_taxi.information_schema"} */
+
+    
+    with tables as (
+      select *
+    from (
+        select
+            t.database_name as table_database,
+            t.schema_name as table_schema,
+            t.table_name as table_name,
+            'BASE TABLE' as table_type,
+            t.comment as table_comment
+        from duckdb_tables() t
+        where upper(t.database_name) = upper('chicago_taxi')
+
+        union all
+
+        select
+            v.database_name as table_database,
+            v.schema_name as table_schema,
+            v.view_name as table_name,
+            'VIEW' as table_type,
+            v.comment as table_comment
+        from duckdb_views() v
+        where upper(v.database_name) = upper('chicago_taxi')
+    ) catalog_tables
+      
+        where (
+
+                (
+                    upper(table_schema) = upper('gold')
+                    and upper(table_name) = upper('dim_trips')
+                ) or 
+
+                (
+                    upper(table_schema) = upper('gold')
+                    and upper(table_name) = upper('dim_location')
+                ) or 
+
+                (
+                    upper(table_schema) = upper('chicago_taxi_source')
+                    and upper(table_name) = upper('taxi_data_silver')
+                ) or 
+
+                (
+                    upper(table_schema) = upper('gold')
+                    and upper(table_name) = upper('fact_trips')
+                ))
+    
+    ),
+    columns as (
+      select *
+    from (
+        select
+            c.database_name as table_database,
+            c.schema_name as table_schema,
+            c.table_name as table_name,
+            c.column_name as column_name,
+            c.column_index as column_index,
+            c.data_type as column_type,
+            c.comment as column_comment
+        from duckdb_columns() c
+        where upper(c.database_name) = upper('chicago_taxi')
+    ) catalog_columns
+      
+        where (
+
+                (
+                    upper(table_schema) = upper('gold')
+                    and upper(table_name) = upper('dim_trips')
+                ) or 
+
+                (
+                    upper(table_schema) = upper('gold')
+                    and upper(table_name) = upper('dim_location')
+                ) or 
+
+                (
+                    upper(table_schema) = upper('chicago_taxi_source')
+                    and upper(table_name) = upper('taxi_data_silver')
+                ) or 
+
+                (
+                    upper(table_schema) = upper('gold')
+                    and upper(table_name) = upper('fact_trips')
+                ))
+    
+    )
+    select
+        tables.table_database,
+        tables.table_schema,
+        tables.table_name,
+        tables.table_type,
+        tables.table_comment,
+        columns.column_name,
+        columns.column_index,
+        columns.column_type,
+        columns.column_comment,
+        null as table_owner
+    from tables
+    join columns using (table_database, table_schema, table_name)
+    order by table_schema, table_name, column_index
+  
+  
+[0m22:06:01.056867 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:06:01.138512 [debug] [ThreadPool]: SQL status: OK in 0.081 seconds
+[0m22:06:01.144404 [debug] [ThreadPool]: On chicago_taxi.information_schema: Close
+[0m22:06:01.176654 [debug] [MainThread]: Wrote artifact CatalogArtifact to /home/mona/PycharmProjects/PythonProject/dbt/target/catalog.json
+[0m22:06:01.220766 [debug] [MainThread]: Wrote artifact WritableManifest to /home/mona/PycharmProjects/PythonProject/dbt/target/manifest.json
+[0m22:06:01.223109 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/mona/PycharmProjects/PythonProject/dbt/target/semantic_manifest.json
+[0m22:06:01.225385 [debug] [MainThread]: Wrote artifact OsiDocument to /home/mona/PycharmProjects/PythonProject/dbt/target/osi_document.json
+[0m22:06:01.225740 [info ] [MainThread]: Catalog written to /home/mona/PycharmProjects/PythonProject/dbt/target/catalog.json
+[0m22:06:01.226613 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 1.2432436, "process_in_blocks": "4952", "process_kernel_time": 0.158149, "process_mem_max_rss": "169028", "process_out_blocks": "6824", "process_user_time": 2.364231}
+[0m22:06:01.227164 [debug] [MainThread]: Command `dbt docs generate` succeeded at 22:06:01.227064 after 1.24 seconds
+[0m22:06:01.227545 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m22:06:01.227882 [debug] [MainThread]: Connection 'chicago_taxi.information_schema' was properly closed.
+[0m22:06:01.228265 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75f03c21f230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75f033c490a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75f03c089af0>]}
+[0m22:06:01.228664 [debug] [MainThread]: Flushing usage events
+[0m22:06:04.262160 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:06:06.086656 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b9185357ec0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b9184d483e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b9184b859a0>]}
+
+
+============================== 22:06:06.088881 | 5d463d3b-cada-4824-aa33-aa9d582bce51 ==============================
+[0m22:06:06.088881 [info ] [MainThread]: Running with dbt=1.12.4
+[0m22:06:06.089348 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'write_json': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'hints_enabled': 'True', 'introspect': 'True', 'log_format': 'default', 'debug': 'False', 'log_path': '/home/mona/PycharmProjects/PythonProject/dbt/logs', 'warn_error': 'None', 'quiet': 'False', 'target_path': 'None', 'printer_width': '80', 'profiles_dir': '/home/mona/.dbt', 'maximum_seed_size_mib': '1', 'cache_selected_only': 'False', 'invocation_command': 'dbt docs serve', 'indirect_selection': 'eager', 'version_check': 'True', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'empty': 'None', 'partial_parse': 'True'}
+[0m22:06:06.309765 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5d463d3b-cada-4824-aa33-aa9d582bce51', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b9183ea4680>]}
+[0m22:06:06.368852 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5d463d3b-cada-4824-aa33-aa9d582bce51', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b9184173380>]}

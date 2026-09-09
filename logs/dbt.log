@@ -1,0 +1,40 @@
+[0m21:47:42.209304 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724a8baa5e20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724a8bd79df0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724a8b86bc20>]}
+
+
+============================== 21:47:42.213186 | 4da3978e-0d91-4ae8-86f2-b3b775db3712 ==============================
+[0m21:47:42.213186 [info ] [MainThread]: Running with dbt=1.12.4
+[0m21:47:42.213775 [debug] [MainThread]: running dbt with arguments {'indirect_selection': 'eager', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'quiet': 'False', 'introspect': 'True', 'maximum_seed_size_mib': '1', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'hints_enabled': 'True', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'printer_width': '80', 'invocation_command': 'dbt debug', 'target_path': 'None', 'debug': 'False', 'log_path': 'logs', 'no_print': 'None', 'log_format': 'default', 'log_cache_events': 'False', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'write_json': 'True', 'profiles_dir': '/home/mona/.dbt', 'static_parser': 'True', 'use_colors': 'True', 'warn_error': 'None'}
+[0m21:47:42.230294 [info ] [MainThread]: dbt version: 1.12.4
+[0m21:47:42.230866 [info ] [MainThread]: python version: 3.12.3
+[0m21:47:42.231479 [info ] [MainThread]: python path: /home/mona/PycharmProjects/PythonProject/.venv/bin/python
+[0m21:47:42.231975 [info ] [MainThread]: os info: Linux-7.0.0-31-generic-x86_64-with-glibc2.39
+[0m21:47:42.232430 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+[Errno 21] Is a directory: '/home/mona/.dbt/profiles.yml'
+[0m21:47:42.235704 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/mona/PycharmProjects/PythonProject/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 198, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mona/PycharmProjects/PythonProject/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 144, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mona/PycharmProjects/PythonProject/.venv/lib/python3.12/site-packages/dbt/cli/main.py", line 440, in debug
+    results = task.run()
+              ^^^^^^^^^^
+  File "/home/mona/PycharmProjects/PythonProject/.venv/lib/python3.12/site-packages/dbt/task/debug.py", line 114, in run
+    load_profile_status: SubtaskStatus = self._load_profile()
+                                         ^^^^^^^^^^^^^^^^^^^^
+  File "/home/mona/PycharmProjects/PythonProject/.venv/lib/python3.12/site-packages/dbt/task/debug.py", line 195, in _load_profile
+    dbt_common.clients.system.load_file_contents(self.profile_path)
+  File "/home/mona/PycharmProjects/PythonProject/.venv/lib/python3.12/site-packages/dbt_common/record.py", line 538, in record_replay_wrapper
+    return func_to_record(*call_args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mona/PycharmProjects/PythonProject/.venv/lib/python3.12/site-packages/dbt_common/clients/system.py", line 183, in load_file_contents
+    with open(path, "rb") as handle:
+         ^^^^^^^^^^^^^^^^
+IsADirectoryError: [Errno 21] Is a directory: '/home/mona/.dbt/profiles.yml'
+
+[0m21:47:42.237583 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.12434658, "process_in_blocks": "56304", "process_kernel_time": 0.158964, "process_mem_max_rss": "112972", "process_out_blocks": "16", "process_user_time": 1.737678}
+[0m21:47:42.238546 [debug] [MainThread]: Command `dbt debug` failed at 21:47:42.238357 after 0.13 seconds
+[0m21:47:42.239384 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724a8baa5e20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724a8a51d070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724a8a51d400>]}
+[0m21:47:42.240248 [debug] [MainThread]: Flushing usage events
+[0m21:47:45.871455 [debug] [MainThread]: An error was encountered while trying to flush usage events

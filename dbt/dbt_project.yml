@@ -1,0 +1,10 @@
+name: 'chicago_taxi_dbt'
+version: '1.0.0'
+config-version: 2
+
+profile: 'chicago_taxi_dbt'
+
+model-paths: ["models"]
+
+models:
+  +materialized: table
